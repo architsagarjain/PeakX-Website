@@ -1,0 +1,149 @@
+@import "tailwindcss";
+
+/* PeakX — tokens taken from the logo: pure black, white, and the X's green. */
+@theme {
+  --color-black: #000000;
+  --color-carbon: #0b0f0b;
+  --color-carbon-2: #131913;
+  --color-white: #f6f8f4;
+  --color-mute: #9aa59b;
+  --color-mute-2: #6d776e;
+  --color-green: #5fb86a;
+  --color-green-hi: #7dd688;
+  --color-green-deep: #2f6b37;
+  --color-paper: #eef2ec;
+  --color-ink: #070a07;
+  --color-line: rgb(255 255 255 / 0.12);
+
+  --font-display: var(--font-peakx-display), "Arial Black", sans-serif;
+  --font-sans: var(--font-archivo), system-ui, sans-serif;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@layer base {
+  html { -webkit-text-size-adjust: 100%; scroll-padding-top: 88px; }
+  @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+  body {
+    background: var(--color-black);
+    color: var(--color-white);
+    font-family: var(--font-sans);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection { background: var(--color-green); color: var(--color-ink); }
+  :focus-visible { outline: 2px solid var(--color-green); outline-offset: 3px; border-radius: 4px; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+}
+
+/* Display type: the logo's extended grotesk. Used big, never for labels. */
+.t-display { font-family: var(--font-display); font-weight: 900; line-height: 0.9; letter-spacing: -0.02em; }
+.t-mega { font-size: clamp(2.6rem, 8.2vw, 7.5rem); }
+.t-h2 { font-size: clamp(2.1rem, 5.4vw, 4.8rem); }
+.t-h3 { font-size: clamp(1.25rem, 2vw, 1.6rem); line-height: 1.05; }
+.t-outline { color: transparent !important; -webkit-text-stroke: 1.5px var(--stroke, rgb(246 248 244 / .85)); }
+
+/* The slash from the logo, used as the one recurring graphic device */
+.slash { position: relative; }
+.slash::after {
+  content: ""; position: absolute; pointer-events: none;
+  width: 2px; height: 140%; background: var(--color-green);
+  transform: rotate(-38deg); transform-origin: center;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: .6em;
+  min-height: 54px; padding: 0 1.6em; border-radius: 999px;
+  font-weight: 700; font-size: 1rem; letter-spacing: .005em; text-decoration: none; cursor: pointer;
+  transition: transform .2s var(--ease-out-expo), background-color .2s, color .2s, box-shadow .3s;
+}
+.btn-green { background: var(--color-green); color: var(--color-ink); }
+.btn-green:hover { background: var(--color-green-hi); transform: translateY(-2px); box-shadow: 0 18px 40px -18px rgb(95 184 106 / .9); }
+.btn-green:active { transform: translateY(0); }
+.btn-line { box-shadow: inset 0 0 0 1.5px rgb(255 255 255 / .35); color: var(--color-white); }
+.btn-line:hover { box-shadow: inset 0 0 0 1.5px var(--color-white); background: rgb(255 255 255 / .06); }
+.btn-ink { background: var(--color-ink); color: var(--color-white); }
+.btn-ink:hover { background: #1b221b; transform: translateY(-2px); }
+.btn .arrow { transition: transform .25s var(--ease-out-expo); }
+.btn:hover .arrow { transform: translateX(4px); }
+
+/* ───────── Glyph Portal hero (overrides on top of the component's own styles) ───────── */
+.peakx-portal [data-gp-caption] { inset: auto 0 0 0; padding: 0 clamp(16px, 4vw, 48px) 28px; justify-content: center; font: inherit; }
+.peakx-portal [data-gp-hint] { display: none; }
+.peakx-portal [data-gp-enter] {
+  font-size: .8125rem; color: var(--color-mute); gap: 10px; text-decoration: none;
+}
+.peakx-portal [data-gp-enter]:hover { color: var(--color-white); }
+.peakx-portal [data-gp-content] { padding: 0; display: block; overflow-wrap: normal; }
+.portal-shade { background: linear-gradient(90deg, rgb(0 0 0 / .86) 0%, rgb(0 0 0 / .6) 45%, rgb(0 0 0 / .2) 100%); }
+@media (orientation: portrait) { .portal-shade { background: linear-gradient(0deg, rgb(0 0 0 / .94) 0%, rgb(0 0 0 / .8) 42%, rgb(0 0 0 / .1) 72%, rgb(0 0 0 / 0) 100%); } }
+.peakx-portal[data-gp-motion="off"] [data-gp-content] { background: transparent; }
+.peakx-portal [data-gp-front] { z-index: 2; }
+
+.portal-eyebrow {
+  position: absolute; left: 0; right: 0; text-align: center;
+  bottom: calc(100% - var(--gp-word-top, 34%) + clamp(18px, 3vh, 34px));
+  color: var(--color-mute); font-size: clamp(.8125rem, 1.1vw, .9375rem); padding: 0 24px;
+}
+.portal-support {
+  position: absolute; left: 0; right: 0; top: calc(var(--gp-word-bottom, 58%) + clamp(20px, 3.4vh, 40px));
+  display: flex; flex-direction: column; align-items: center; text-align: center; gap: 22px; padding: 0 20px;
+}
+.portal-support h1 { font-family: var(--font-display); font-weight: 800; font-size: clamp(1.25rem, 2.2vw, 1.9rem); line-height: 1.1; letter-spacing: -.01em; max-width: 32ch; }
+.portal-support .ctas { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; pointer-events: auto; }
+.portal-ready-only { opacity: 0; transition: opacity .6s; }
+[data-gp-ready] .portal-ready-only { opacity: 1; }
+
+/* The logo's slash, laid over the X in the opening frame */
+.portal-slash {
+  position: absolute; width: 2px; background: var(--color-green);
+  left: var(--slash-x, 85%); top: calc(var(--gp-word-top, 34%) - 14vh);
+  height: calc(var(--gp-word-bottom, 58%) - var(--gp-word-top, 34%) + 28vh);
+  transform: rotate(-38deg); transform-origin: center; box-shadow: 0 0 18px rgb(95 184 106 / .6);
+}
+
+@media (max-width: 639px) {
+  .portal-slash { top: calc(var(--gp-word-top, 34%) - 3vh); height: calc(var(--gp-word-bottom, 58%) - var(--gp-word-top, 34%) + 6vh); }
+}
+
+/* Anything with a person in it starts below the fixed header, plus breathing room */
+:root { --header-h: 72px; --headroom: clamp(10px, 2.5svh, 28px); }
+.hero-film { top: calc(var(--header-h) + var(--headroom)); height: calc(100% - var(--header-h) - var(--headroom)); }
+
+/* Scroll-lit manifesto */
+.lit-word { color: rgb(246 248 244 / .16); transition: color .35s; }
+.lit-word.on { color: var(--color-white); }
+.lit-word.on.hl { color: var(--color-green); }
+
+/* Marquee */
+.marquee { display: flex; width: max-content; animation: marquee 38s linear infinite; }
+.marquee-wrap:hover .marquee { animation-play-state: paused; }
+@keyframes marquee { to { transform: translateX(-50%); } }
+
+/* Journey */
+.j-frame { position: absolute; inset: 0; opacity: 0; transition: opacity .9s var(--ease-out-expo); }
+.j-frame.on { opacity: 1; }
+.j-frame img { transform: scale(1.08); transform-origin: 50% 0%; transition: transform 7s linear; }
+.j-frame.on img { transform: scale(1); }
+.j-cap { opacity: 0; pointer-events: none; transform: translateY(18px); transition: opacity .6s var(--ease-out-expo), transform .6s var(--ease-out-expo); }
+.j-cap.on { opacity: 1; transform: none; pointer-events: auto; }
+.j-num { font-variant-numeric: tabular-nums; }
+
+/* Form options */
+.opt input { position: absolute; opacity: 0; inset: 0; cursor: pointer; }
+.opt span { transition: background-color .15s, border-color .15s, color .15s; }
+.opt input:hover + span { border-color: var(--color-ink); }
+.opt input:checked + span { background: var(--color-ink); border-color: var(--color-ink); color: var(--color-white); }
+.opt input:focus-visible + span { outline: 2px solid var(--color-green); outline-offset: 2px; }
+
+@keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+.rise { animation: rise .45s var(--ease-out-expo) both; }
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee { animation: none; }
+  *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}
