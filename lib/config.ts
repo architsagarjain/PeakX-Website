@@ -12,7 +12,7 @@ export const site = {
   // Meta Pixel ID from Events Manager. Leave "" to switch the pixel off.
   metaPixelId: process.env.NEXT_PUBLIC_META_PIXEL_ID ?? "",
   // Where qualified applicants book their discovery call (Calendly, Cal.com…).
-  bookingUrl: process.env.NEXT_PUBLIC_BOOKING_URL ?? "https://calendly.com/REPLACE-ME/discovery-call",
+  bookingUrl: "https://topmate.io/fitwithbhavika/1601092",
   // Free guide for people who aren't ready yet.
   leadMagnetUrl: process.env.NEXT_PUBLIC_LEAD_MAGNET_URL ?? "https://www.instagram.com/fitwithbhavika/",
   // WhatsApp number, digits only with country code (e.g. 919876543210). Fallback if the form fails.
