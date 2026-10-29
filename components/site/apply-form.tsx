@@ -125,6 +125,7 @@ export default function ApplyForm({ id = "apply-form", heading = "Apply in 3 min
         await new Promise((res) => setTimeout(res, 500));
         setResult(qualified ? "book" : "nurture");
         setStatus("idle");
+        window.location.assign(site.bookingUrl);
         return;
       }
       const r = await fetch("/api/apply", {
@@ -136,6 +137,7 @@ export default function ApplyForm({ id = "apply-form", heading = "Apply in 3 min
       track("Lead", { content_name: qualified ? "qualified" : "nurture" });
       setResult(qualified ? "book" : "nurture");
       setStatus("idle");
+      window.location.assign(site.bookingUrl);
     } catch {
       setStatus("error");
     }
@@ -158,7 +160,7 @@ export default function ApplyForm({ id = "apply-form", heading = "Apply in 3 min
             <>
               <h2 className="t-display text-4xl">Thanks. Start with the free guide.</h2>
               <p className="mt-4 text-ink/70">Thanks, {first}. It sounds like now isn't quite the moment for 1-on-1 coaching, and that's fine. Start with Bhavika's free guide, and we'll keep your application on file for when you're ready.</p>
-              <a href={site.leadMagnetUrl} target="_blank" rel="noopener" className="btn btn-ink mt-6 w-full">Get the free guide</a>
+              <a href={site.bookingUrl} target="_blank" rel="noopener" className="btn btn-ink mt-6 w-full">Continue to Topmate</a>
             </>
           )}
         </div>
