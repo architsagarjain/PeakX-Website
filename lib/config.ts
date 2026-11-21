@@ -11,6 +11,8 @@ export const site = {
 
   // Meta Pixel ID from Events Manager. Leave "" to switch the pixel off.
   metaPixelId: process.env.NEXT_PUBLIC_META_PIXEL_ID ?? "1136156435841936",
+  // Microsoft Clarity project ID (session recordings and heatmaps). Leave "" to switch it off.
+  clarityId: process.env.NEXT_PUBLIC_CLARITY_ID ?? "zgymmu66zb",
   // Where qualified applicants book their discovery call (Calendly, Cal.com…).
   bookingUrl: "https://topmate.io/fitwithbhavika/1601092",
   // Free guide for people who aren't ready yet.

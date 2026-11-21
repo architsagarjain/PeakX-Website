@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { display, sans } from "@/lib/fonts";
 import { site } from "@/lib/config";
 import Pixel from "@/components/site/pixel";
+import Clarity from "@/components/site/clarity";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -75,6 +76,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <a href="#main" className="fixed left-3 -top-16 z-[100] rounded-full bg-green px-4 py-2 font-bold text-ink focus:top-3">Skip to content</a>
         {children}
         <Pixel id={site.metaPixelId} />
+        <Clarity id={site.clarityId} />
       </body>
     </html>
   );
