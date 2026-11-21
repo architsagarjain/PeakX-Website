@@ -14,7 +14,7 @@ const sections: [string, string][] = [
   ["What we collect", "When you apply for coaching we collect the answers you give: your name, email, WhatsApp number, Instagram handle, age range, country, diet, training preferences, goals and any notes you add. We also record which ad or link brought you to the site."],
   ["How we use it", "Only to review your application, contact you about coaching, and, if you join, to write and adjust your plans. We don't sell your information."],
   ["Cookies and analytics", "This site may use the Meta Pixel to measure which ads lead to applications. You can limit ad tracking in your Facebook and Instagram ad settings and in your browser."],
-  ["Who we share it with", "Bhavika and her assistant coach, plus the tools that store applications and book calls (for example, Google Sheets and Calendly). They process data on our behalf."],
+  ["Who we share it with", "Bhavika and her assistant coach, plus the tools that store applications and book calls (for example, Google Sheets and Topmate). They process data on our behalf."],
   ["Your choices", `Email ${site.email} to see, correct or delete the information we hold about you. We reply within 30 days.`],
   ["Health information", "Coaching is not medical advice. If you tell us about a medical condition, we use it only to decide whether coaching is safe and suitable for you."],
 ];

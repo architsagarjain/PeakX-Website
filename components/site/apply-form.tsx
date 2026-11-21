@@ -152,7 +152,7 @@ export default function ApplyForm({ id = "apply-form", heading = "Apply in 3 min
           {result === "book" ? (
             <>
               <h2 className="t-display text-4xl">You're a good fit. Book your call.</h2>
-              <p className="mt-4 text-ink/70">Thanks, {first}. Pick a time for your free 20-minute discovery call with Bhavika. She'll read your answers before you speak.</p>
+              <p className="mt-4 text-ink/70">Thanks, {first}. Pick a time for your 20-minute discovery call with Bhavika (₹99). She'll read your answers before you speak.</p>
               <a href={site.bookingUrl} target="_blank" rel="noopener" onClick={() => track("Schedule")} className="btn btn-green mt-6 w-full">Book my discovery call <ArrowRight className="arrow h-4 w-4" aria-hidden /></a>
               <p className="mt-4 text-sm text-ink/55">Can't find a time that works? Reply to the WhatsApp message we send you.</p>
             </>

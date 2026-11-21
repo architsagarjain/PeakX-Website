@@ -9,12 +9,12 @@ export default function ApplySection() {
         <div className="lg:pt-6">
           <h2 id="apply-title" className="t-display t-mega max-w-[11ch]">Week one starts here.</h2>
           <p className="mt-8 max-w-[44ch] text-lg text-white/70">
-            Bhavika writes every plan herself, so she takes on a limited number of new clients each month. Tell her about you, and if it's a fit you'll book a free call straight away.
+            Bhavika writes every plan herself, so she takes on a limited number of new clients each month. Tell her about you, and if it's a fit you'll book a ₹99 call straight away.
           </p>
           <ul className="mt-10 grid gap-4">
             {[
               "3-minute application, no payment",
-              "Free 20-minute discovery call with Bhavika",
+              "20-minute discovery call with Bhavika, just ₹99",
               "Plans in 2–3 days if you join",
               "Part-payment available",
             ].map((t) => (

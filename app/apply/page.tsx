@@ -10,14 +10,14 @@ import { faqs } from "@/lib/config";
 
 export const metadata: Metadata = {
   title: "Apply for 1-on-1 Coaching with Bhavika Agarwal",
-  description: "Apply for 1-on-1 online fat loss coaching with Bhavika Agarwal. A 3-minute application, then a free discovery call to see if coaching is right for you.",
+  description: "Apply for 1-on-1 online fat loss coaching with Bhavika Agarwal. A 3-minute application, then a ₹99 discovery call to see if coaching is right for you.",
   alternates: { canonical: "/apply" },
   openGraph: { url: "/apply", title: "Apply for 1-on-1 coaching with Bhavika | PeakX" },
 };
 
 const lpFaqs = [
   faqs[0],
-  { q: "What happens after I apply?", a: "If coaching looks like a fit, you book a free 20-minute call with Bhavika. If you join, you fill in a detailed questionnaire and your plans arrive in 2–3 days." },
+  { q: "What happens after I apply?", a: "If coaching looks like a fit, you book a 20-minute call with Bhavika for ₹99. If you join, you fill in a detailed questionnaire and your plans arrive in 2–3 days." },
   { q: "Is the call a sales pitch?", a: "It's a conversation about your goal and routine. If coaching isn't right for you, Bhavika will say so and point you to free resources instead." },
   faqs[5],
 ];
