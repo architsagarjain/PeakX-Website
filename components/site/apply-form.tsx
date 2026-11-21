@@ -137,7 +137,8 @@ export default function ApplyForm({ id = "apply-form", heading = "Apply in 3 min
       track("Lead", { content_name: qualified ? "qualified" : "nurture" });
       setResult(qualified ? "book" : "nurture");
       setStatus("idle");
-      window.location.assign(site.bookingUrl);
+      // Give the pixel a moment to send the Lead event before leaving the page
+      window.setTimeout(() => window.location.assign(site.bookingUrl), 800);
     } catch {
       setStatus("error");
     }
