@@ -3,6 +3,7 @@ import { display, sans } from "@/lib/fonts";
 import { site } from "@/lib/config";
 import Pixel from "@/components/site/pixel";
 import Clarity from "@/components/site/clarity";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -77,6 +78,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {children}
         <Pixel id={site.metaPixelId} />
         <Clarity id={site.clarityId} />
+        <SpeedInsights />
       </body>
     </html>
   );

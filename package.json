@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@vercel/speed-insights": "^2.1.0",
     "clsx": "^2.1.1",
     "lucide-react": "^1.54.0",
     "next": "^15.5.27",
