@@ -13,7 +13,8 @@ const dist = join(tracker, "dist");
 const pub = join(root, "public");
 const run = (cmd, env = {}) => execSync(cmd, { cwd: tracker, stdio: "inherit", env: { ...process.env, ...env } });
 
-if (!existsSync(join(tracker, "node_modules"))) run("npm ci");
+// --include=dev: Vercel builds with NODE_ENV=production, which would otherwise skip Vite
+if (!existsSync(join(tracker, "node_modules", ".bin", "vite"))) run("npm ci --include=dev");
 run("npm run build:site", { VITE_SITE_URL: process.env.VITE_SITE_URL || "https://www.peakx.in" });
 
 for (const dir of ["app", "_pages"]) rmSync(join(pub, dir), { recursive: true, force: true });
