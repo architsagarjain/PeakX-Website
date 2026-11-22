@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 
 const lpFaqs = [
   faqs[0],
-  { q: "What happens after I apply?", a: "If coaching looks like a fit, you book a 20-minute call with Bhavika for ₹99. If you join, you fill in a detailed questionnaire and your plans arrive in 2–3 days." },
+  { q: "What happens after I apply?", a: "If coaching looks like a fit, you book a 30-minute call with Bhavika for ₹99. If you join, you fill in a detailed questionnaire and your plans arrive in 2–3 days." },
   { q: "Is the call a sales pitch?", a: "It's a conversation about your goal and routine. If coaching isn't right for you, Bhavika will say so and point you to free resources instead." },
   faqs[5],
 ];

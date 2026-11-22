@@ -82,7 +82,7 @@ export function About() {
 export function Steps() {
   const steps = [
     ["3 minutes", "Apply", "Tell us your goal, your routine and what you've tried."],
-    ["20 minutes", "Discovery call", "Talk to Bhavika. If it's not a fit, she'll tell you."],
+    ["30 minutes", "Discovery call", "Talk to Bhavika. If it's not a fit, she'll tell you."],
     ["Same day", "Questionnaire", "Your food, schedule, injuries and preferences in detail."],
     ["2–3 days", "Plans delivered", "Training, cardio and diet plans written for you."],
     ["Week 1", "Kickoff call", "Walk through everything and start with confidence."],

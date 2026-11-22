@@ -14,7 +14,7 @@ export default function ApplySection() {
           <ul className="mt-10 grid gap-4">
             {[
               "3-minute application, no payment",
-              "20-minute discovery call with Bhavika, just ₹99",
+              "30-minute discovery call with Bhavika, just ₹99",
               "Plans in 2–3 days if you join",
               "Part-payment available",
             ].map((t) => (
