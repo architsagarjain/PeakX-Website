@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>PeakX — Log Your Food</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-error": "#ffffff", "on-tertiary-container": "#446a7c", "tertiary-fixed-dim": "#a5cce1", "text-primary": "#0E0F0C", "on-secondary-fixed": "#3f001a", "on-background": "#1b1c19", "on-tertiary-fixed": "#001e2b", "lime-glow": "rgba(198, 244, 50, 0.16)", "secondary": "#ac2a5b", "surface-container-low": "#f5f4ee", "primary-container": "#c6f432", "coral-gradient-start": "#FF6B9A", "on-error-container": "#93000a", "secondary-fixed-dim": "#ffb1c4", "on-primary-container": "#566d00", "coral-gradient-end": "#FFB3C7", "background": "#fbf9f3", "inverse-on-surface": "#f2f1eb", "electric-lime": "#C6F432", "text-muted": "#9A9B94", "surface-glass-border": "rgba(255, 255, 255, 0.65)", "on-primary-fixed": "#161f00", "canvas-light": "#F5F5F2", "outline": "#747962", "on-secondary-container": "#6e0032", "tertiary-fixed": "#c1e8fe", "primary-fixed": "#c5f331", "error-container": "#ffdad6", "inverse-primary": "#aad600", "on-surface-variant": "#444934", "secondary-fixed": "#ffd9e0", "on-primary-fixed-variant": "#3b4d00", "surface-container": "#efeee8", "error": "#ba1a1a", "inverse-surface": "#30312d", "secondary-container": "#ff6b9a", "surface-bright": "#fbf9f3", "surface-variant": "#e4e2dd", "contrast-band": "#0E0F0C", "primary": "#506600", "surface-dim": "#dbdad4", "surface-container-high": "#eae8e2", "surface-container-highest": "#e4e2dd", "on-secondary-fixed-variant": "#8c0b43", "surface": "#fbf9f3", "surface-glass": "rgba(255, 255, 255, 0.72)", "on-primary": "#ffffff", "surface-tint": "#506600", "text-secondary": "#6A6B66", "surface-container-lowest": "#ffffff", "primary-fixed-dim": "#aad600", "outline-variant": "#c4c9ae", "contrast-surface": "#1A1B17", "on-tertiary": "#ffffff", "tertiary-container": "#c2e9ff", "on-secondary": "#ffffff", "tertiary": "#3e6376", "on-tertiary-fixed-variant": "#244b5d", "on-surface": "#1b1c19" }, "borderRadius": { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" }, "spacing": { "margin": "1.25rem", "space-md": "1rem", "space-2xl": "3rem", "space-lg": "1.5rem", "space-xxs": "0.25rem", "gutter-desktop": "1.5rem", "margin-desktop": "2.5rem", "space-xs": "0.5rem", "space-xl": "2rem", "space-sm": "0.75rem", "gutter": "1.25rem" }, "fontFamily": { "stat-display": ["Manrope"], "label-md": ["Inter"], "stat-display-mobile": ["Manrope"], "body-md": ["Inter"], "stat-unit": ["Inter"], "body-sm": ["Inter"], "body-lg": ["Inter"], "headline-md": ["Manrope"], "headline-xl-mobile": ["Manrope"], "headline-lg": ["Manrope"], "label-caps": ["Inter"], "headline-xl": ["Manrope"], "headline-sm": ["Manrope"] }, "fontSize": { "stat-display": ["56px", { "lineHeight": "60px", "letterSpacing": "-0.04em", "fontWeight": "300" }], "label-md": ["13px", { "lineHeight": "18px", "fontWeight": "500" }], "stat-display-mobile": ["40px", { "lineHeight": "44px", "letterSpacing": "-0.03em", "fontWeight": "300" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "stat-unit": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "500" }], "headline-xl-mobile": ["30px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "400" }], "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "500" }], "label-caps": ["11px", { "lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "600" }], "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.03em", "fontWeight": "400" }], "headline-sm": ["16px", { "lineHeight": "24px", "fontWeight": "600" }] } } } };</script></head><body class="bg-canvas-light text-on-surface font-body-md text-body-md antialiased min-h-screen selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 left-0 right-0 z-50 bg-surface-glass backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 w-full max-w-[1440px] mx-auto px-margin md:px-margin-desktop flex items-center justify-between gap-space-lg"><div class="flex items-center shrink-0"><a class="flex items-center transition-opacity hover:opacity-90" data-path="home" href="#"><span class="font-headline-lg text-headline-lg text-text-primary tracking-tight font-bold">PeakX</span></a></div><div class="flex items-center gap-space-sm"><nav class="flex items-center p-1.5 bg-surface-container-low/90 backdrop-blur-md rounded-full shadow-[0_2px_12px_rgba(0,0,0,0.03)]"><a class="px-space-md py-space-xs rounded-full font-label-md text-label-md text-text-secondary hover:text-text-primary transition-all duration-200" data-path="home" href="#">Home</a><a class="px-space-md py-space-xs rounded-full font-label-md text-label-md text-text-secondary hover:text-text-primary transition-all duration-200" data-path="plan" href="#">Plan</a><a class="px-space-md py-space-xs rounded-full font-label-md text-label-md bg-contrast-band text-white font-medium shadow-sm transition-all duration-200" data-path="log" href="#">Log</a><a class="px-space-md py-space-xs rounded-full font-label-md text-label-md text-text-secondary hover:text-text-primary transition-all duration-200" data-path="insights" href="#">Insights</a><a class="px-space-md py-space-xs rounded-full font-label-md text-label-md text-text-secondary hover:text-text-primary transition-all duration-200" data-path="reviews" href="#">Reviews</a><a class="px-space-md py-space-xs rounded-full font-label-md text-label-md text-text-secondary hover:text-text-primary transition-all duration-200 flex items-center gap-1.5" data-path="coach" href="#"><span>Coach</span><span class="px-1.5 py-0.5 rounded-full bg-primary-container text-on-primary-fixed text-[10px] font-bold tracking-wider uppercase leading-none">Pro</span></a><a class="px-space-md py-space-xs rounded-full font-label-md text-label-md text-text-secondary hover:text-text-primary transition-all duration-200" data-path="tools" href="#">Tools</a></nav></div><div class="flex items-center gap-space-sm shrink-0"><div class="hidden md:flex items-center gap-space-xs px-space-sm py-2 rounded-full bg-surface-container-low text-text-secondary hover:bg-surface-container transition-colors cursor-pointer"><span class="material-symbols-outlined text-[18px]">search</span><span class="font-label-md text-label-md text-text-muted">Quick search</span><kbd class="font-label-caps text-label-caps px-1.5 py-0.5 rounded-full bg-surface-container-high text-text-secondary uppercase tracking-wider">⌘K</kbd></div><a class="hidden sm:flex items-center gap-space-xs px-space-sm py-2 rounded-full bg-primary-container hover:bg-primary-fixed-dim text-on-primary-fixed font-label-md text-label-md transition-all shadow-[0_8px_20px_-4px_rgba(198,244,50,0.4)]" data-path="log" href="#"><span class="material-symbols-outlined text-[18px]">mic</span><span>Log a meal</span></a><button aria-label="Notifications" class="relative w-9 h-9 rounded-full bg-surface-container-low hover:bg-surface-container flex items-center justify-center text-text-secondary hover:text-text-primary transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-coral-gradient-start ring-2 ring-surface-container-low"></span></button><a class="shrink-0 transition-transform hover:scale-105" data-path="coach" href="#"><img alt="Profile" class="w-9 h-9 rounded-full object-cover ring-2 ring-surface-container" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZ4QvudYPidppU9ME_bAmpqQZYPH6uGRnk5VUA04lwZNYJxnEGWuRPf7FEZCDhLrghEY_iK9I-YvjuJO17fqWDla8uU7Lv-cbd2AQJ_a2tKAhP-576I4EK6Ypqo1j3OKKt5UCwfdaYq8dr-_UJuFqKIz9SP_ojZ-LnmbdN1MODUjpi35QR9KSjwu6XM52cFfChEIC6ixD-0PVpkM38NBrNx-O7lXX2-xWMs1J0yeoQHgimhwBcEuWhNw"/></a></div></div></header><main class="w-full pt-20 bg-canvas-light"><div class="flex flex-col w-full">
+<!-- Upper Canvas -->
+<section class="w-full max-w-[1440px] mx-auto px-margin md:px-margin-desktop pt-6 pb-12">
+<!-- Top Page Header -->
+<div class="flex flex-col sm:flex-row sm:items-end justify-between gap-space-lg mb-8">
+<div>
+<h1 class="font-headline-xl text-headline-xl text-text-primary tracking-tight">Log your food</h1>
+<p class="font-body-lg text-body-lg text-text-secondary mt-1">
+Speak naturally in English or Hindi, or type your meal
+</p>
+</div>
+<!-- Input Mode Switcher: Voice Mic and Type Food only -->
+<div class="inline-flex p-1.5 bg-surface-container rounded-full self-start sm:self-auto shadow-sm">
+<button class="flex items-center gap-1.5 px-space-md py-space-xs rounded-full bg-contrast-band text-white font-label-md text-label-md transition-all shadow-sm" id="btn-voice">
+<span class="material-symbols-outlined text-[18px]">mic</span>
+<span>Voice mic</span>
+</button>
+<button class="flex items-center gap-1.5 px-space-md py-space-xs rounded-full text-text-secondary hover:text-text-primary font-label-md text-label-md transition-all" id="btn-type">
+<span class="material-symbols-outlined text-[18px]">keyboard</span>
+<span>Type food</span>
+</button>
+</div>
+</div>
+<!-- 12-Column Responsive Layout -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-gutter-desktop items-start">
+<!-- Left / Center: Voice Recording & Indian Meal Parsed Components (7 Columns) -->
+<div class="xl:col-span-7 flex flex-col gap-space-lg">
+<!-- Voice Hero Card -->
+<div class="relative bg-surface-container-lowest/90 backdrop-blur-2xl rounded-3xl p-6 sm:p-8 shadow-[0_12px_40px_-8px_rgba(14,15,12,0.06)] overflow-hidden">
+<!-- Ambient Glow Flare -->
+<div class="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-primary-container/25 blur-3xl pointer-events-none"></div>
+<!-- Mic Listening Header -->
+<div class="flex items-center justify-between pb-4">
+<div class="flex items-center gap-3">
+<span class="relative flex h-3 w-3">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-container opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-primary"></span>
+</span>
+<span class="font-label-md text-label-md text-text-primary font-medium tracking-wide">Listening to food items...</span>
+</div>
+<div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-low text-text-secondary font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px] text-primary">timer</span>
+<span class="font-mono tracking-tight font-medium text-text-primary">00:03.4</span>
+</div>
+</div>
+<!-- Pulsating Voice Node & Active Waveform -->
+<div class="my-4 py-5 px-5 bg-surface-container-low/70 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-6">
+<!-- Glowing Acid Lime Mic Button -->
+<div class="relative flex items-center justify-center shrink-0">
+<div class="absolute w-24 h-24 rounded-full bg-electric-lime/30 animate-ping pointer-events-none"></div>
+<div class="absolute w-20 h-20 rounded-full bg-electric-lime/60 blur-md pointer-events-none"></div>
+<button aria-label="Toggle Recording" class="relative w-16 h-16 rounded-full bg-primary-container text-on-primary-fixed flex items-center justify-center shadow-[0_12px_28px_-4px_rgba(198,244,50,0.65)] hover:scale-105 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[30px]" style="font-variation-settings: 'FILL' 1;">mic</span>
+</button>
+</div>
+<!-- Active Equalizer Waveform -->
+<div class="flex items-center gap-1.5 h-14 w-full max-w-sm justify-center sm:justify-start">
+<span class="w-1.5 bg-primary rounded-full h-5 animate-pulse"></span>
+<span class="w-1.5 bg-primary-fixed-dim rounded-full h-10 animate-pulse" style="animation-delay: 90ms;"></span>
+<span class="w-1.5 bg-text-primary rounded-full h-14 animate-pulse" style="animation-delay: 160ms;"></span>
+<span class="w-1.5 bg-primary rounded-full h-7 animate-pulse" style="animation-delay: 50ms;"></span>
+<span class="w-1.5 bg-primary-fixed-dim rounded-full h-12 animate-pulse" style="animation-delay: 210ms;"></span>
+<span class="w-1.5 bg-text-primary rounded-full h-9 animate-pulse" style="animation-delay: 120ms;"></span>
+<span class="w-1.5 bg-primary rounded-full h-13 animate-pulse" style="animation-delay: 180ms;"></span>
+<span class="w-1.5 bg-primary-fixed-dim rounded-full h-8 animate-pulse" style="animation-delay: 80ms;"></span>
+<span class="w-1.5 bg-text-primary rounded-full h-4 animate-pulse" style="animation-delay: 40ms;"></span>
+<span class="w-1.5 bg-primary rounded-full h-6 animate-pulse" style="animation-delay: 110ms;"></span>
+</div>
+<div class="text-right hidden sm:block shrink-0">
+<span class="inline-flex items-center gap-1 font-label-caps text-label-caps text-primary font-semibold bg-surface-container px-2.5 py-1 rounded-full">
+<span class="material-symbols-outlined text-[13px]">check_circle</span>
+Voice recognized
+</span>
+</div>
+</div>
+<!-- Live Transcript Box -->
+<div class="p-4 sm:p-5 bg-surface-container-lowest rounded-2xl shadow-sm border border-surface-container/60">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-caps text-label-caps text-text-muted uppercase tracking-wider">Live Transcript</span>
+<span class="font-label-caps text-label-caps text-primary font-medium sm:hidden">Voice recognized</span>
+</div>
+<p class="font-headline-sm text-headline-sm text-text-primary leading-relaxed font-medium">
+“2 rotis, ek katori dal aur thoda chawal”
+</p>
+</div>
+</div>
+<!-- Parsed Food Items Section -->
+<div class="bg-surface-container-lowest/90 backdrop-blur-xl rounded-3xl p-6 sm:p-8 shadow-[0_12px_40px_-8px_rgba(14,15,12,0.04)] flex flex-col gap-5">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-1">
+<div>
+<h2 class="font-headline-md text-headline-md text-text-primary">Parsed Food Items</h2>
+<p class="font-body-sm text-body-sm text-text-secondary mt-0.5">Identified from speech · Edit or adjust portions anytime</p>
+</div>
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container hover:bg-surface-container-high text-text-primary font-label-md text-label-md transition-colors self-start sm:self-auto">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>Add item</span>
+</button>
+</div>
+<!-- Food Cards -->
+<div class="flex flex-col gap-3.5">
+<!-- Item 1: 2 Whole Wheat Rotis -->
+<div class="p-4 rounded-2xl bg-surface-container-low hover:bg-surface-container transition-colors flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<div class="flex items-center gap-3.5">
+<div class="w-10 h-10 rounded-full bg-primary-container/40 flex items-center justify-center text-on-primary-fixed-variant shrink-0">
+<span class="material-symbols-outlined text-[20px]">bakery_dining</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-body-lg text-body-lg font-semibold text-text-primary">2 Whole Wheat Rotis</span>
+<span class="font-label-caps text-label-caps text-text-secondary bg-surface-container-lowest px-2 py-0.5 rounded-full">Plain / Phulka</span>
+</div>
+<div class="font-body-sm text-body-sm text-text-secondary mt-0.5">
+<span class="text-text-primary font-medium">240 kcal</span> • Protein 6g • Carbs 40g • Fat 1g
+</div>
+</div>
+</div>
+<div class="flex items-center gap-1 self-end sm:self-auto">
+<button aria-label="Edit item" class="w-8 h-8 rounded-full hover:bg-surface-container-lowest flex items-center justify-center text-text-secondary hover:text-text-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button aria-label="Remove item" class="w-8 h-8 rounded-full hover:bg-surface-container-lowest flex items-center justify-center text-text-secondary hover:text-error transition-colors">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+<!-- Item 2: Yellow Dal (Tadka) -->
+<div class="p-4 rounded-2xl bg-surface-container-low hover:bg-surface-container transition-colors flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<div class="flex items-center gap-3.5">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed/50 flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined text-[20px]">soup_kitchen</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-body-lg text-body-lg font-semibold text-text-primary">Yellow Dal (Tadka)</span>
+<span class="font-label-caps text-label-caps text-text-secondary bg-surface-container-lowest px-2 py-0.5 rounded-full">1 katori (150g)</span>
+</div>
+<div class="font-body-sm text-body-sm text-text-secondary mt-0.5">
+<span class="text-text-primary font-medium">180 kcal</span> • Protein 9g • Carbs 24g • Fat 4g
+</div>
+</div>
+</div>
+<div class="flex items-center gap-1 self-end sm:self-auto">
+<button aria-label="Edit item" class="w-8 h-8 rounded-full hover:bg-surface-container-lowest flex items-center justify-center text-text-secondary hover:text-text-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button aria-label="Remove item" class="w-8 h-8 rounded-full hover:bg-surface-container-lowest flex items-center justify-center text-text-secondary hover:text-error transition-colors">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+<!-- Item 3: Steamed Basmati Rice + Portion Selector Prompt -->
+<div class="p-4 sm:p-5 rounded-2xl bg-surface-container-high/60 flex flex-col gap-3">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+<div class="flex items-center gap-3.5">
+<div class="w-10 h-10 rounded-full bg-tertiary-container/60 flex items-center justify-center text-tertiary shrink-0">
+<span class="material-symbols-outlined text-[20px]">rice_bowl</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-body-lg text-body-lg font-semibold text-text-primary">Steamed Basmati Rice</span>
+<span class="font-label-caps text-label-caps text-primary bg-primary-container/40 px-2 py-0.5 rounded-full font-semibold">Portion needed</span>
+</div>
+<div class="font-body-sm text-body-sm text-text-secondary mt-0.5">
+Estimated <span class="text-text-primary font-medium">180 kcal</span> • Protein 3g • Carbs 38g • Fat 0.5g
+</div>
+</div>
+</div>
+<div class="flex items-center gap-1 self-end sm:self-auto">
+<button aria-label="Edit item" class="w-8 h-8 rounded-full hover:bg-surface-container-lowest flex items-center justify-center text-text-secondary hover:text-text-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button aria-label="Remove item" class="w-8 h-8 rounded-full hover:bg-surface-container-lowest flex items-center justify-center text-text-secondary hover:text-error transition-colors">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+<div class="pt-2 border-t border-surface-container">
+<p class="font-label-md text-label-md text-text-secondary mb-2">How much rice?</p>
+<div class="flex flex-wrap items-center gap-2" id="rice-portion-group">
+<button class="px-3.5 py-1.5 rounded-full bg-surface-container-lowest hover:bg-contrast-band hover:text-white text-text-primary font-label-md text-label-md shadow-sm transition-all" type="button">
+½ katori
+</button>
+<button class="px-3.5 py-1.5 rounded-full bg-contrast-band text-white font-label-md text-label-md shadow-sm transition-all" type="button">
+1 katori
+</button>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-container-lowest hover:bg-contrast-band hover:text-white text-text-primary font-label-md text-label-md shadow-sm transition-all" type="button">
+1 plate
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Total Meal Estimate & Action Buttons -->
+<div class="pt-5 bg-surface-container-low rounded-2xl p-5 flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div>
+<div class="font-label-caps text-label-caps text-text-muted uppercase tracking-wider">Total Meal Estimate</div>
+<div class="flex items-baseline gap-2 mt-0.5">
+<span class="font-headline-lg text-headline-lg text-text-primary font-semibold">600</span>
+<span class="font-stat-unit text-stat-unit text-text-secondary">KCAL</span>
+<span class="font-body-md text-body-md text-text-secondary ml-1 font-medium">
+• 24g protein
+</span>
+</div>
+</div>
+<div class="flex items-center gap-2.5">
+<button class="px-4 py-2.5 rounded-full bg-surface-container-lowest hover:bg-surface-container text-text-secondary hover:text-text-primary font-label-md text-label-md transition-colors shadow-sm">
+Save as draft
+</button>
+<button class="px-5 py-2.5 rounded-full bg-contrast-band hover:bg-contrast-surface text-white font-label-md text-label-md transition-all shadow-md flex items-center gap-2">
+<span>Confirm &amp; save to Dinner</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Side Panel: Daily Calories & Today's Timeline (5 Columns) -->
+<div class="xl:col-span-5 flex flex-col gap-space-lg">
+<!-- Daily Calorie Target Card -->
+<div class="bg-surface-container-lowest/90 backdrop-blur-xl rounded-3xl p-6 sm:p-7 shadow-[0_12px_40px_-8px_rgba(14,15,12,0.04)]">
+<div class="flex items-center justify-between mb-3">
+<div>
+<span class="font-label-caps text-label-caps text-text-muted uppercase tracking-wider">Calories Today</span>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-stat-display text-stat-display text-text-primary font-light">1,380</span>
+<span class="font-stat-unit text-stat-unit text-text-muted">/ 2,200 kcal</span>
+</div>
+</div>
+<span class="px-3 py-1 rounded-full bg-primary-container text-on-primary-fixed font-label-caps text-label-caps font-semibold">
+820 kcal left
+</span>
+</div>
+<!-- Caloric Progress Bar -->
+<div class="w-full h-3 rounded-full bg-surface-container overflow-hidden mb-6">
+<div class="h-full bg-contrast-band rounded-full" style="width: 62.7%;"></div>
+</div>
+<!-- Segmented Macro Progress Bars -->
+<div class="flex flex-col gap-4">
+<!-- Protein -->
+<div>
+<div class="flex items-center justify-between font-label-md text-label-md mb-1.5">
+<span class="text-text-primary font-medium">Protein</span>
+<span class="font-mono text-text-secondary">92 / 130g <span class="text-primary font-semibold">(71%)</span></span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 71%;"></div>
+</div>
+</div>
+<!-- Carbohydrates -->
+<div>
+<div class="flex items-center justify-between font-label-md text-label-md mb-1.5">
+<span class="text-text-primary font-medium">Carbs</span>
+<span class="font-mono text-text-secondary">168 / 250g <span class="text-text-primary font-semibold">(67%)</span></span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-tertiary rounded-full" style="width: 67%;"></div>
+</div>
+</div>
+<!-- Fats -->
+<div>
+<div class="flex items-center justify-between font-label-md text-label-md mb-1.5">
+<span class="text-text-primary font-medium">Fat</span>
+<span class="font-mono text-text-secondary">42 / 65g <span class="text-secondary font-semibold">(65%)</span></span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-secondary-container rounded-full" style="width: 65%;"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Today's Meal Timeline -->
+<div class="bg-surface-container-lowest/90 backdrop-blur-xl rounded-3xl p-6 sm:p-7 shadow-[0_12px_40px_-8px_rgba(14,15,12,0.04)]">
+<div class="flex items-center justify-between mb-6">
+<h3 class="font-headline-sm text-headline-sm text-text-primary">Today's Timeline</h3>
+<span class="font-label-caps text-label-caps text-text-muted uppercase">3 Logged • 1 In Progress</span>
+</div>
+<div class="relative pl-6 flex flex-col gap-6 before:content-[''] before:absolute before:left-2 before:top-2 before:bottom-2 before:w-0.5 before:bg-surface-container-high">
+<!-- Breakfast -->
+<div class="relative">
+<span class="absolute -left-[1.85rem] top-1.5 w-3.5 h-3.5 rounded-full bg-primary ring-4 ring-surface-container-lowest"></span>
+<div class="flex items-start justify-between gap-2">
+<div>
+<div class="flex items-center gap-2">
+<span class="font-body-md text-body-md font-semibold text-text-primary">Breakfast</span>
+<span class="font-label-caps text-label-caps text-text-muted">8:30 AM</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary mt-0.5">Besan chilla + curd</p>
+</div>
+<div class="text-right shrink-0">
+<div class="font-label-md text-label-md font-medium text-text-primary">420 kcal • 22g P</div>
+<span class="inline-flex items-center text-[10px] uppercase font-semibold text-primary bg-primary-container/30 px-1.5 py-0.5 rounded">
+Logged ✓
+</span>
+</div>
+</div>
+</div>
+<!-- Lunch -->
+<div class="relative">
+<span class="absolute -left-[1.85rem] top-1.5 w-3.5 h-3.5 rounded-full bg-primary ring-4 ring-surface-container-lowest"></span>
+<div class="flex items-start justify-between gap-2">
+<div>
+<div class="flex items-center gap-2">
+<span class="font-body-md text-body-md font-semibold text-text-primary">Lunch</span>
+<span class="font-label-caps text-label-caps text-text-muted">1:15 PM</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary mt-0.5">Rajma chawal + cucumber salad</p>
+</div>
+<div class="text-right shrink-0">
+<div class="font-label-md text-label-md font-medium text-text-primary">610 kcal • 26g P</div>
+<span class="inline-flex items-center text-[10px] uppercase font-semibold text-primary bg-primary-container/30 px-1.5 py-0.5 rounded">
+Logged ✓
+</span>
+</div>
+</div>
+</div>
+<!-- Snack -->
+<div class="relative">
+<span class="absolute -left-[1.85rem] top-1.5 w-3.5 h-3.5 rounded-full bg-primary ring-4 ring-surface-container-lowest"></span>
+<div class="flex items-start justify-between gap-2">
+<div>
+<div class="flex items-center gap-2">
+<span class="font-body-md text-body-md font-semibold text-text-primary">Snack</span>
+<span class="font-label-caps text-label-caps text-text-muted">5:00 PM</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary mt-0.5">Whey protein shake + 1 banana</p>
+</div>
+<div class="text-right shrink-0">
+<div class="font-label-md text-label-md font-medium text-text-primary">350 kcal • 32g P</div>
+<span class="inline-flex items-center text-[10px] uppercase font-semibold text-primary bg-primary-container/30 px-1.5 py-0.5 rounded">
+Logged ✓
+</span>
+</div>
+</div>
+</div>
+<!-- Dinner (In progress) -->
+<div class="relative">
+<span class="absolute -left-[1.85rem] top-1.5 w-3.5 h-3.5 rounded-full bg-electric-lime ring-4 ring-surface-container-lowest animate-pulse"></span>
+<div class="flex items-start justify-between gap-2 p-3.5 rounded-xl bg-surface-container-low">
+<div>
+<div class="flex items-center gap-2">
+<span class="font-body-md text-body-md font-semibold text-text-primary">Dinner</span>
+<span class="font-label-caps text-label-caps text-text-muted">8:30 PM</span>
+<span class="px-1.5 py-0.5 rounded bg-contrast-band text-white font-label-caps text-[10px] uppercase tracking-wider">Current</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary mt-0.5">In progress (2 rotis, dal, rice)</p>
+</div>
+<div class="text-right shrink-0">
+<div class="font-label-md text-label-md font-bold text-text-primary">~600 kcal</div>
+<span class="text-body-sm text-primary font-semibold font-mono">In progress</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Lower Canvas: Dark Band (#0E0F0C) -->
+<section class="w-full bg-contrast-band text-white py-12 px-margin md:px-margin-desktop">
+<div class="max-w-[1440px] mx-auto">
+<!-- Band Header -->
+<div class="pb-6">
+<h2 class="font-headline-lg text-headline-lg text-white font-medium">
+After this meal
+</h2>
+<p class="font-body-md text-body-md text-text-muted mt-1">Your projected nutritional standing for the rest of today</p>
+</div>
+<!-- 3 Practical Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter-desktop">
+<!-- Card 1: Calories remaining today -->
+<div class="bg-contrast-surface rounded-2xl p-6 relative overflow-hidden flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-caps text-label-caps text-text-muted uppercase tracking-wider">Calories remaining today</span>
+<span class="material-symbols-outlined text-electric-lime text-[22px]">energy_savings_leaf</span>
+</div>
+<div class="flex items-baseline gap-2 mt-2">
+<span class="font-stat-display text-stat-display text-white font-light">220</span>
+<span class="font-stat-unit text-stat-unit text-text-muted">kcal left</span>
+</div>
+<p class="font-body-md text-body-md text-text-muted mt-3">
+Reserved for an optional post-dinner or bedtime snack.
+</p>
+</div>
+<div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-body-sm">
+<span class="text-text-muted">Target: 2,200 kcal</span>
+<span class="text-electric-lime font-mono font-medium">90% of budget</span>
+</div>
+</div>
+<!-- Card 2: Protein status -->
+<div class="bg-contrast-surface rounded-2xl p-6 relative overflow-hidden flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-caps text-label-caps text-text-muted uppercase tracking-wider">Protein status</span>
+<span class="material-symbols-outlined text-electric-lime text-[22px]">fitness_center</span>
+</div>
+<div class="flex items-baseline gap-2 mt-2">
+<span class="font-stat-display text-stat-display text-white font-light">116</span>
+<span class="font-stat-unit text-stat-unit text-text-muted">/ 130 g reached</span>
+</div>
+<p class="font-body-md text-body-md text-text-muted mt-3">
+Only <span class="text-white font-semibold">14g protein left</span> to hit your goal.
+</p>
+</div>
+<div class="mt-6 pt-4 border-t border-white/10">
+<div class="w-full h-2 rounded-full bg-white/10 overflow-hidden mb-2">
+<div class="h-full bg-electric-lime rounded-full" style="width: 89%;"></div>
+</div>
+<div class="flex justify-between font-label-caps text-label-caps text-text-muted">
+<span>89% Complete</span>
+<span class="text-electric-lime">Almost there</span>
+</div>
+</div>
+</div>
+<!-- Card 3: Coach tip for tonight -->
+<div class="bg-contrast-surface rounded-2xl p-6 relative overflow-hidden flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-caps text-label-caps text-text-muted uppercase tracking-wider">Coach tip for tonight</span>
+<span class="material-symbols-outlined text-electric-lime text-[22px]">lightbulb</span>
+</div>
+<p class="font-body-lg text-body-lg text-white leading-relaxed mt-2">
+You are right on track. If you feel hungry before bed, a cup of warm milk or 100g low-fat paneer will easily hit your 130g protein goal.
+</p>
+</div>
+<div class="mt-6 pt-4 border-t border-white/10 flex items-center gap-2 text-body-sm text-text-muted">
+<span class="material-symbols-outlined text-[18px] text-electric-lime">recommend</span>
+<span>Coach recommendation • Gurugram plan</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div></main>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const btnVoice = document.getElementById('btn-voice');
+  const btnType = document.getElementById('btn-type');
+  if (btnVoice && btnType) {
+    btnVoice.addEventListener('click', () => {
+      btnVoice.className = 'flex items-center gap-1.5 px-space-md py-space-xs rounded-full bg-contrast-band text-white font-label-md text-label-md transition-all shadow-sm';
+      btnType.className = 'flex items-center gap-1.5 px-space-md py-space-xs rounded-full text-text-secondary hover:text-text-primary font-label-md text-label-md transition-all';
+    });
+    btnType.addEventListener('click', () => {
+      btnType.className = 'flex items-center gap-1.5 px-space-md py-space-xs rounded-full bg-contrast-band text-white font-label-md text-label-md transition-all shadow-sm';
+      btnVoice.className = 'flex items-center gap-1.5 px-space-md py-space-xs rounded-full text-text-secondary hover:text-text-primary font-label-md text-label-md transition-all';
+    });
+  }
+
+  const riceButtons = document.querySelectorAll('#rice-portion-group button');
+  riceButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      riceButtons.forEach(b => {
+        b.className = 'px-3.5 py-1.5 rounded-full bg-surface-container-lowest hover:bg-contrast-band hover:text-white text-text-primary font-label-md text-label-md shadow-sm transition-all';
+      });
+      btn.className = 'px-3.5 py-1.5 rounded-full bg-contrast-band text-white font-label-md text-label-md shadow-sm transition-all';
+    });
+  });
+});
+</script>
+</body></html>

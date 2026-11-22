@@ -4,13 +4,16 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "node scripts/build-tracker.mjs && next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "build:tracker": "node scripts/build-tracker.mjs"
   },
   "dependencies": {
     "@vercel/speed-insights": "^2.1.0",
     "clsx": "^2.1.1",
+    "fflate": "^0.8.2",
+    "firebase-admin": "^12.7.0",
     "lucide-react": "^1.54.0",
     "next": "^15.5.27",
     "react": "^19.3.0",

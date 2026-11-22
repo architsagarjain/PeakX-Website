@@ -1,0 +1,67 @@
+rules_version = '2';
+// PeakX: each signed-in user can read and write only their own data.
+//   users/{uid}                  profile, targets, plan and settings
+//   users/{uid}/days/{date}      that day's meals, workouts, weight and wearable data
+//   users/{uid}/reports/{week}   weekly reports, written by the server job
+//   users/{uid}/private/billing  plan and payments, written only by the server (R4)
+//   users/{uid}/private/devices  wearable connections and read toggles, written by the server (R6)
+//   users/{uid}/private/email    email preferences; the member and the unsubscribe link both write it (R6)
+//   users/{uid}/wearable/{date}  synced wearable data, written by the server (R6)
+//   queue/{id}                   coach queue (R5): members add items, coaches work them via the server
+//   config/{doc}                 coach-maintained lookups (food aliases), read-only for members
+// Coaches, payments, members, device tokens, OAuth state and founding counts are server-only (Firebase Admin bypasses these rules).
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() { return request.auth != null; }
+    function paid() {
+      let path = /databases/$(database)/documents/users/$(request.auth.uid)/private/billing;
+      return exists(path)
+        && get(path).data.plan in ['pro', 'coached']
+        && get(path).data.status in ['active', 'cancelling', 'halted']
+        && request.time.toMillis() < get(path).data.paidThroughMs + 3 * 86400000;
+    }
+
+    match /users/{uid} {
+      allow read, write: if signedIn() && request.auth.uid == uid;
+      // Weekly reports are written by the server job; the app may only record accept/skip answers.
+      match /reports/{week} {
+        allow read: if signedIn() && request.auth.uid == uid;
+        allow update: if signedIn() && request.auth.uid == uid
+          && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['changes']);
+      }
+      match /days/{date} {
+        allow read, write: if signedIn() && request.auth.uid == uid
+          && date.matches('^[0-9]{4}-[0-9]{2}-[0-9]{2}$');
+      }
+      match /private/{doc} {
+        allow read: if signedIn() && request.auth.uid == uid;
+        allow write: if signedIn() && request.auth.uid == uid && doc == 'email'
+          && request.resource.data.keys().hasOnly(['logNudge', 'reportEmail', 'retest', 'unsubscribedAt']);
+      }
+      match /wearable/{date} {
+        allow read: if signedIn() && request.auth.uid == uid;
+      }
+    }
+
+    match /queue/{id} {
+      allow read: if signedIn() && resource.data.uid == request.auth.uid;
+      allow create: if signedIn()
+        && request.resource.data.uid == request.auth.uid
+        && request.resource.data.status == 'open'
+        && request.resource.data.timeSec == 0
+        && !('result' in request.resource.data)
+        && !('claimedBy' in request.resource.data)
+        && request.resource.data.kind in ['form', 'labs', 'food', 'lead']
+        && (request.resource.data.kind in ['food', 'lead'] || paid());
+    }
+
+    match /config/{doc} {
+      allow read: if signedIn();
+    }
+
+    // Everything else is closed.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

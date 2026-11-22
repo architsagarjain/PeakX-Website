@@ -1,0 +1,16 @@
+rules_version = '2';
+// PeakX uploads (R5): Form Check videos go to the member's own folder. Coaches watch them through
+// short-lived signed links from the server, so nobody else can read the folder.
+service firebase.storage {
+  match /b/{bucket}/o {
+    match /uploads/{uid}/form/{file} {
+      allow read: if request.auth != null && request.auth.uid == uid;
+      allow create: if request.auth != null && request.auth.uid == uid
+        && request.resource.size < 150 * 1024 * 1024
+        && request.resource.contentType.matches('video/.*');
+    }
+    match /{all=**} {
+      allow read, write: if false;
+    }
+  }
+}

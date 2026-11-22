@@ -74,3 +74,15 @@ A lead is **qualified** (shown the booking link) when they're ready to invest (o
 - "Limited number of new clients each month" and "Bhavika takes every discovery call herself".
 
 All imagery is AI-generated with Higgsfield and shows a fictional woman, not a client. Never present it as a client result.
+
+## The PeakX app (`tracker/`)
+
+The fitness tracking app (React + Vite, formerly peakx.live) lives in `tracker/` with its own design, dependencies and tests. `npm run build` builds it first (`scripts/build-tracker.mjs`) and copies the output into `public/`, so it is served from this site:
+
+| URL | What |
+|---|---|
+| `/app` | The app (hash routes: `/app/#/app/log`, `/app/#/welcome` …) |
+| `/calories/…`, `/blog/…` | Its static calorie guide and blog pages (files in `public/_pages/`) |
+| `/api/ai`, `/api/pay`, `/api/devices` … | Its server functions: `app/api/*/route.ts` re-export `tracker/api/*` |
+
+`public/app/` and `public/_pages/` are generated and git-ignored. Rewrites and headers are in `next.config.ts`; crons are in `vercel.json`. Work on the app in `tracker/` (`cd tracker && npm ci && npm run dev`, `npm test`); its environment variables are listed in `tracker/.env.example`, plus `APP_URL` (for example `https://www.peakx.in/app`) for links in emails and device redirects.

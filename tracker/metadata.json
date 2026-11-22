@@ -1,0 +1,5 @@
+{
+  "name": "PeakX",
+  "description": "Fitness and nutrition coaching for Indian gym-goers who have hit a plateau: voice meal logging, Indian recipes, wearable sync and a weekly answer on what to change.",
+  "requestFramePermissions": ["microphone"]
+}

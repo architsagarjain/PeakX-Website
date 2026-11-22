@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>PeakX Coach — Personal AI Coaching</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-error": "#ffffff", "on-tertiary-container": "#446a7c", "tertiary-fixed-dim": "#a5cce1", "text-primary": "#0E0F0C", "on-secondary-fixed": "#3f001a", "on-background": "#1b1c19", "on-tertiary-fixed": "#001e2b", "lime-glow": "rgba(198, 244, 50, 0.16)", "secondary": "#ac2a5b", "surface-container-low": "#f5f4ee", "primary-container": "#c6f432", "coral-gradient-start": "#FF6B9A", "on-error-container": "#93000a", "secondary-fixed-dim": "#ffb1c4", "on-primary-container": "#566d00", "coral-gradient-end": "#FFB3C7", "background": "#fbf9f3", "inverse-on-surface": "#f2f1eb", "electric-lime": "#C6F432", "text-muted": "#9A9B94", "surface-glass-border": "rgba(255, 255, 255, 0.65)", "on-primary-fixed": "#161f00", "canvas-light": "#F5F5F2", "outline": "#747962", "on-secondary-container": "#6e0032", "tertiary-fixed": "#c1e8fe", "primary-fixed": "#c5f331", "error-container": "#ffdad6", "inverse-primary": "#aad600", "on-surface-variant": "#444934", "secondary-fixed": "#ffd9e0", "on-primary-fixed-variant": "#3b4d00", "surface-container": "#efeee8", "error": "#ba1a1a", "inverse-surface": "#30312d", "secondary-container": "#ff6b9a", "surface-bright": "#fbf9f3", "surface-variant": "#e4e2dd", "contrast-band": "#0E0F0C", "primary": "#506600", "surface-dim": "#dbdad4", "surface-container-high": "#eae8e2", "surface-container-highest": "#e4e2dd", "on-secondary-fixed-variant": "#8c0b43", "surface": "#fbf9f3", "surface-glass": "rgba(255, 255, 255, 0.72)", "on-primary": "#ffffff", "surface-tint": "#506600", "text-secondary": "#6A6B66", "surface-container-lowest": "#ffffff", "primary-fixed-dim": "#aad600", "outline-variant": "#c4c9ae", "contrast-surface": "#1A1B17", "on-tertiary": "#ffffff", "tertiary-container": "#c2e9ff", "on-secondary": "#ffffff", "tertiary": "#3e6376", "on-tertiary-fixed-variant": "#244b5d", "on-surface": "#1b1c19" }, "borderRadius": { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" }, "spacing": { "margin": "1.25rem", "space-md": "1rem", "space-2xl": "3rem", "space-lg": "1.5rem", "space-xxs": "0.25rem", "gutter-desktop": "1.5rem", "margin-desktop": "2.5rem", "space-xs": "0.5rem", "space-xl": "2rem", "space-sm": "0.75rem", "gutter": "1.25rem" }, "fontFamily": { "stat-display": ["Manrope"], "label-md": ["Inter"], "stat-display-mobile": ["Manrope"], "body-md": ["Inter"], "stat-unit": ["Inter"], "body-sm": ["Inter"], "body-lg": ["Inter"], "headline-md": ["Manrope"], "headline-xl-mobile": ["Manrope"], "headline-lg": ["Manrope"], "label-caps": ["Inter"], "headline-xl": ["Manrope"], "headline-sm": ["Manrope"] }, "fontSize": { "stat-display": ["56px", { "lineHeight": "60px", "letterSpacing": "-0.04em", "fontWeight": "300" }], "label-md": ["13px", { "lineHeight": "18px", "fontWeight": "500" }], "stat-display-mobile": ["40px", { "lineHeight": "44px", "letterSpacing": "-0.03em", "fontWeight": "300" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "stat-unit": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "500" }], "headline-xl-mobile": ["30px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "400" }], "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "500" }], "label-caps": ["11px", { "lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "600" }], "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.03em", "fontWeight": "400" }], "headline-sm": ["16px", { "lineHeight": "24px", "fontWeight": "600" }] } } } };</script></head><body class="bg-canvas-light text-on-surface font-body-md text-body-md antialiased min-h-screen selection:bg-primary-container selection:text-on-primary-container pb-space-xl"><header class="fixed top-0 left-0 right-0 z-50 bg-surface-glass backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 w-full max-w-[1440px] mx-auto px-margin md:px-margin-desktop flex items-center justify-between gap-space-md"><div class="flex items-center shrink-0"><a class="transition-opacity hover:opacity-90 flex items-center" data-path="home" href="#"><span class="font-headline-md text-headline-md text-text-primary tracking-tight font-bold">PeakX</span></a></div><div class="flex items-center gap-space-sm"><nav class="flex items-center p-1.5 bg-surface-container-low/90 backdrop-blur-md rounded-full shadow-[0_2px_12px_rgba(0,0,0,0.03)]"><a class="px-space-md py-space-xs rounded-full font-label-md text-label-md text-text-secondary hover:text-text-primary transition-all duration-200" data-path="home" href="#">Home</a><a class="px-space-md py-space-xs rounded-full font-label-md text-label-md text-text-secondary hover:text-text-primary transition-all duration-200" data-path="plan" href="#">Plan</a><a class="px-space-md py-space-xs rounded-full font-label-md text-label-md text-text-secondary hover:text-text-primary transition-all duration-200" data-path="log" href="#">Log</a><a class="px-space-md py-space-xs rounded-full font-label-md text-label-md text-text-secondary hover:text-text-primary transition-all duration-200" data-path="insights" href="#">Insights</a><a class="px-space-md py-space-xs rounded-full font-label-md text-label-md text-text-secondary hover:text-text-primary transition-all duration-200" data-path="reviews" href="#">Reviews</a><a class="px-space-md py-space-xs rounded-full font-label-md text-label-md bg-contrast-band text-white font-medium shadow-sm flex items-center gap-1.5" data-path="coach" href="#"><span>Coach</span><span class="px-1.5 py-0.2 rounded-full bg-electric-lime text-text-primary text-[10px] font-bold leading-tight uppercase">Pro</span></a><a class="px-space-md py-space-xs rounded-full font-label-md text-label-md text-text-secondary hover:text-text-primary transition-all duration-200 hidden sm:inline-block" data-path="tools" href="#">Tools</a></nav></div><div class="flex items-center gap-space-sm shrink-0"><div class="hidden md:flex items-center gap-space-xs px-space-sm py-2 rounded-full bg-surface-container-low text-text-secondary hover:bg-surface-container transition-colors cursor-pointer"><span class="material-symbols-outlined text-[18px]">search</span><span class="font-label-md text-label-md text-text-muted">Search</span><kbd class="font-label-caps text-label-caps px-1.5 py-0.5 rounded-full bg-surface-container-high text-text-secondary uppercase tracking-wider">⌘K</kbd></div><a class="hidden sm:flex items-center gap-space-xs px-space-sm py-2 rounded-full bg-primary-container hover:bg-primary-fixed-dim text-on-primary-fixed font-label-md text-label-md font-semibold transition-all shadow-[0_4px_14px_-2px_rgba(198,244,50,0.5)]" data-path="log" href="#"><span class="material-symbols-outlined text-[18px]">mic</span><span>Log a meal</span></a><button aria-label="Notifications" class="relative w-9 h-9 rounded-full bg-surface-container-low hover:bg-surface-container flex items-center justify-center text-text-secondary hover:text-text-primary transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-coral-gradient-start ring-2 ring-surface-container-low"></span></button><a class="shrink-0 transition-transform hover:scale-105" data-path="profile" href="#"><img alt="Arjun Sharma" class="w-9 h-9 rounded-full object-cover ring-2 ring-primary-container" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZ4QvudYPidppU9ME_bAmpqQZYPH6uGRnk5VUA04lwZNYJxnEGWuRPf7FEZCDhLrghEY_iK9I-YvjuJO17fqWDla8uU7Lv-cbd2AQJ_a2tKAhP-576I4EK6Ypqo1j3OKKt5UCwfdaYq8dr-_UJuFqKIz9SP_ojZ-LnmbdN1MODUjpi35QR9KSjwu6XM52cFfChEIC6ixD-0PVpkM38NBrNx-O7lXX2-xWMs1J0yeoQHgimhwBcEuWhNw"/></a></div></div></header><main class="w-full pt-24 bg-canvas-light"><div class="flex flex-col w-full">
+<div class="w-full max-w-[1440px] mx-auto px-margin md:px-margin-desktop py-space-xs flex flex-col gap-space-lg">
+<!-- Main Balanced 2-Column Work Surface -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- LEFT COLUMN: Coach Conversational Workspace (7 Cols) -->
+<section class="lg:col-span-7 flex flex-col gap-space-md">
+<!-- Active Chat Canvas -->
+<div class="bg-surface-container-lowest/95 backdrop-blur-xl rounded-2xl p-space-md sm:p-space-lg shadow-sm border border-surface-container flex flex-col gap-space-lg">
+<!-- Conversation Header State -->
+<div class="flex items-center justify-between pb-space-xs border-b border-surface-container-low">
+<div class="flex items-center gap-space-sm">
+<div class="relative w-10 h-10 rounded-full bg-contrast-band flex items-center justify-center text-primary-container shadow-sm">
+<span class="material-symbols-outlined text-[22px]">smart_toy</span>
+<span class="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-electric-lime ring-2 ring-surface-container-lowest"></span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h2 class="font-headline-sm text-headline-sm text-text-primary font-semibold">PeakX Coach</h2>
+<span class="px-2 py-0.5 rounded-full bg-primary-container text-on-primary-fixed font-label-caps text-label-caps uppercase tracking-wide font-bold">AI Coach</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary flex items-center gap-1.5 mt-0.5">
+<span class="w-2 h-2 rounded-full bg-primary inline-block"></span>
+<span>Online · Based on your Fitbit data and workout log</span>
+</p>
+</div>
+</div>
+</div>
+<!-- User Ingestion Query -->
+<div class="flex flex-col items-end gap-1.5">
+<div class="max-w-[88%] bg-contrast-band text-white rounded-2xl rounded-tr-xs px-space-md py-space-sm shadow-sm">
+<p class="font-body-md text-body-md text-white font-normal leading-relaxed">
+                My energy was a bit low during squats today, and I'm feeling hungry in the evenings. Should we adjust my food or take a rest day?
+              </p>
+</div>
+<div class="flex items-center gap-1.5 text-text-muted font-label-caps text-label-caps px-1">
+<span>Arjun</span>
+<span>•</span>
+<span>Today 1:45 PM</span>
+</div>
+</div>
+<!-- Coach Adaptive Synthesis -->
+<div class="flex flex-col items-start gap-space-xs">
+<div class="w-full bg-surface-container-low/80 rounded-2xl rounded-tl-xs p-space-md sm:p-space-lg text-text-primary border border-surface-container-high/60 flex flex-col gap-space-md">
+<p class="font-body-md text-body-md leading-relaxed text-text-primary">
+                Hey Arjun! Looking at your week, you’ve hit all your squat sessions and bumped your squat to 80 kg today—that’s great progress. Your sleep was 7h 10m last night, which is good, but your calories are slightly low on heavy training days. Here is a simple plan to fix the evening hunger without stalling your weight goal:
+              </p>
+<!-- INLINE CARD 1: Pre-Workout Snack Tweak -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm border border-surface-container hover:shadow-md transition-shadow">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-xs mb-2.5">
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center text-on-primary-fixed">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+</div>
+<div>
+<span class="font-label-caps text-label-caps uppercase text-primary font-bold">Action 1</span>
+<h4 class="font-headline-sm text-headline-sm text-text-primary font-semibold">Pre-Workout Snack Tweak</h4>
+</div>
+</div>
+<button class="self-start sm:self-auto flex items-center gap-1.5 px-space-sm py-1.5 rounded-full bg-contrast-band text-white font-label-md text-label-md hover:bg-contrast-surface transition-colors shadow-sm" type="button">
+<span>Add to tomorrow's plan</span>
+<span class="material-symbols-outlined text-[16px] text-primary-container">add_circle</span>
+</button>
+</div>
+<p class="font-body-md text-body-md text-text-secondary leading-relaxed bg-surface-container-low/70 rounded-lg p-space-sm">
+                  Add 1 medium banana + 20g almonds 45 mins before tomorrow’s session (+150 kcal carbs) to keep squat energy high.
+                </p>
+</div>
+<!-- INLINE CARD 2: Tonight's Dinner -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm border border-surface-container hover:shadow-md transition-shadow">
+<div class="flex items-center gap-space-xs mb-2">
+<div class="w-8 h-8 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed">
+<span class="material-symbols-outlined text-[18px]">restaurant</span>
+</div>
+<div>
+<span class="font-label-caps text-label-caps uppercase text-secondary font-bold">Action 2</span>
+<h4 class="font-headline-sm text-headline-sm text-text-primary font-semibold">Tonight's Dinner</h4>
+</div>
+</div>
+<p class="font-body-md text-body-md text-text-secondary leading-relaxed bg-surface-container-low/70 rounded-lg p-space-sm">
+                  You have 820 kcal left today. Go ahead with your planned paneer bhurji (200g) + 2 rotis. That will give you 38g protein and keep you full through the night.
+                </p>
+</div>
+<!-- INLINE CARD 3: Rest & Recovery -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm border border-surface-container hover:shadow-md transition-shadow">
+<div class="flex items-center gap-space-xs mb-2">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center text-text-primary">
+<span class="material-symbols-outlined text-[18px]">spa</span>
+</div>
+<div>
+<span class="font-label-caps text-label-caps uppercase text-text-muted font-bold">Action 3</span>
+<h4 class="font-headline-sm text-headline-sm text-text-primary font-semibold">Rest &amp; Recovery</h4>
+</div>
+</div>
+<p class="font-body-md text-body-md text-text-secondary leading-relaxed bg-surface-container-low/70 rounded-lg p-space-sm">
+                  Sunday is an active rest day—keep it to a relaxing 30-minute walk in the park. No extra gym work needed.
+                </p>
+</div>
+</div>
+</div>
+<!-- Bottom Contextual Chat Dock -->
+<div class="relative w-full bg-surface-container-low rounded-xl p-space-xs shadow-inner flex items-center gap-space-xs border border-surface-container">
+<button aria-label="Voice input" class="w-10 h-10 shrink-0 rounded-full bg-surface-container-lowest hover:bg-surface-container text-text-secondary hover:text-text-primary flex items-center justify-center transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[20px]">mic</span>
+</button>
+<input class="flex-1 bg-transparent px-space-xs py-2 font-body-md text-body-md text-text-primary placeholder:text-text-muted focus:outline-none" placeholder="Ask your coach anything about your diet, workouts, or plateau..." type="text"/>
+<button aria-label="Send message" class="w-10 h-10 shrink-0 rounded-full bg-contrast-band hover:bg-contrast-surface text-primary-container flex items-center justify-center transition-all shadow-md" type="button">
+<span class="material-symbols-outlined text-[20px]">send</span>
+</button>
+</div>
+</div>
+</section>
+<!-- RIGHT COLUMN: Diagnostics & Athlete Telemetry Deck (5 Cols) -->
+<section class="lg:col-span-5 flex flex-col gap-space-md">
+<!-- Athlete Profile Card: Arjun Sharma -->
+<div class="bg-surface-container-lowest/95 backdrop-blur-xl rounded-2xl p-space-md sm:p-space-lg shadow-sm border border-surface-container flex flex-col gap-space-md">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="relative">
+<img alt="Arjun Sharma" class="w-16 h-16 rounded-full object-cover shadow-sm ring-2 ring-primary-container" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZ4QvudYPidppU9ME_bAmpqQZYPH6uGRnk5VUA04lwZNYJxnEGWuRPf7FEZCDhLrghEY_iK9I-YvjuJO17fqWDla8uU7Lv-cbd2AQJ_a2tKAhP-576I4EK6Ypqo1j3OKKt5UCwfdaYq8dr-_UJuFqKIz9SP_ojZ-LnmbdN1MODUjpi35QR9KSjwu6XM52cFfChEIC6ixD-0PVpkM38NBrNx-O7lXX2-xWMs1J0yeoQHgimhwBcEuWhNw"/>
+<span class="absolute bottom-0 right-0 w-4 h-4 rounded-full bg-primary-container ring-2 ring-surface-container-lowest"></span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="font-headline-md text-headline-md text-text-primary font-bold">Arjun Sharma</h3>
+<span class="font-label-caps text-label-caps bg-surface-container text-text-secondary px-2 py-0.5 rounded-full font-semibold">26 · Gurugram</span>
+</div>
+<p class="font-body-md text-body-md text-text-secondary mt-0.5 font-medium">Goal: Break plateau · Reach 72 kg</p>
+</div>
+</div>
+</div>
+<!-- Current Weight Card -->
+<div class="bg-surface-container-low rounded-xl p-space-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-text-muted uppercase">Current Weight</span>
+<div class="flex items-baseline gap-1 mt-0.5">
+<span class="font-headline-lg text-headline-lg text-text-primary font-bold">74.2</span>
+<span class="font-stat-unit text-stat-unit text-text-secondary font-medium">kg</span>
+</div>
+</div>
+<div class="flex items-center gap-1 px-space-xs py-1 rounded-full bg-surface-container-lowest text-primary font-label-md text-label-md font-semibold shadow-xs">
+<span class="material-symbols-outlined text-[16px]">trending_down</span>
+<span>−0.4 kg this week</span>
+</div>
+</div>
+</div>
+<!-- Plateau Status Card -->
+<div class="bg-surface-container-lowest/95 backdrop-blur-xl rounded-2xl p-space-md shadow-sm border border-surface-container flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary-container text-[20px]">speed</span>
+<span class="font-headline-sm text-headline-sm text-text-primary font-semibold">Plateau Risk: Watch (34%)</span>
+</div>
+<span class="font-label-caps text-label-caps px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-bold uppercase">Moderate</span>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden mt-1">
+<div class="bg-secondary-container h-full rounded-full" style="width: 34%;"></div>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary mt-1">
+            Strength is rising while weight is steady. Recomp in progress.
+          </p>
+</div>
+<!-- Last 7 Days Summary -->
+<div class="bg-surface-container-lowest/95 backdrop-blur-xl rounded-2xl p-space-md sm:p-space-lg shadow-sm border border-surface-container flex flex-col gap-space-sm">
+<div class="flex items-center justify-between border-b border-surface-container-low pb-2">
+<h4 class="font-headline-sm text-headline-sm text-text-primary font-semibold">Last 7 Days Summary</h4>
+<span class="font-label-caps text-label-caps px-2 py-0.5 rounded-full bg-surface-container text-text-secondary font-medium">Synced</span>
+</div>
+<div class="flex flex-col divide-y divide-surface-container-low">
+<!-- Workouts -->
+<div class="py-2.5 flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-full bg-surface-container-low flex items-center justify-center text-text-primary">
+<span class="material-symbols-outlined text-[18px]">fitness_center</span>
+</div>
+<div>
+<span class="font-body-md text-body-md text-text-primary font-medium block">Workouts</span>
+<span class="font-body-sm text-body-sm text-text-muted">Squats, Bench, Pull, Deadlift</span>
+</div>
+</div>
+<span class="font-label-md text-label-md font-bold text-text-primary bg-primary-container px-2 py-0.5 rounded-full">4 / 4 completed</span>
+</div>
+<!-- Calorie Adherence -->
+<div class="py-2.5 flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-full bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">pie_chart</span>
+</div>
+<div>
+<span class="font-body-md text-body-md text-text-primary font-medium block">Calorie adherence</span>
+<span class="font-body-sm text-body-sm text-text-muted">Avg 2,140 / 2,200 kcal</span>
+</div>
+</div>
+<span class="font-headline-sm text-headline-sm font-semibold text-text-primary">94%</span>
+</div>
+<!-- Protein Hit -->
+<div class="py-2.5 flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-full bg-surface-container-low flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[18px]">egg_alt</span>
+</div>
+<div>
+<span class="font-body-md text-body-md text-text-primary font-medium block">Protein hit</span>
+<span class="font-body-sm text-body-sm text-text-muted">Avg 126g / 130g</span>
+</div>
+</div>
+<span class="font-headline-sm text-headline-sm font-semibold text-text-primary">6 <span class="font-body-sm text-body-sm text-text-muted font-normal">/ 7 days</span></span>
+</div>
+<!-- Sleep -->
+<div class="py-2.5 flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-full bg-surface-container-low flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[18px]">bedtime</span>
+</div>
+<div>
+<span class="font-body-md text-body-md text-text-primary font-medium block">Average sleep</span>
+<span class="font-body-sm text-body-sm text-text-muted">Fitbit Tracker</span>
+</div>
+</div>
+<span class="font-headline-sm text-headline-sm font-semibold text-text-primary">7h 12m</span>
+</div>
+<!-- Steps -->
+<div class="pt-2.5 flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-full bg-surface-container-low flex items-center justify-center text-outline">
+<span class="material-symbols-outlined text-[18px]">directions_walk</span>
+</div>
+<div>
+<span class="font-body-md text-body-md text-text-primary font-medium block">Daily steps avg</span>
+<span class="font-body-sm text-body-sm text-text-muted">Google Fit</span>
+</div>
+</div>
+<span class="font-headline-sm text-headline-sm font-semibold text-text-primary">8,650 <span class="font-body-sm text-body-sm text-text-muted font-normal">/ 10k</span></span>
+</div>
+</div>
+</div>
+<!-- Quick Questions Chips -->
+<div class="bg-surface-container-lowest/95 backdrop-blur-xl rounded-2xl p-space-md shadow-sm border border-surface-container flex flex-col gap-space-xs">
+<span class="font-label-caps text-label-caps text-text-muted uppercase font-bold tracking-wider">Quick Questions</span>
+<div class="flex flex-col gap-2 pt-1">
+<button class="w-full text-left p-space-xs sm:px-space-sm sm:py-2.5 rounded-xl bg-surface-container-low hover:bg-surface-container text-text-primary transition-all flex items-center justify-between group" type="button">
+<span class="font-body-md text-body-md">How do I fix my sticking point on squats?</span>
+<span class="material-symbols-outlined text-text-muted group-hover:text-text-primary group-hover:translate-x-1 transition-all text-[18px]">arrow_forward</span>
+</button>
+<button class="w-full text-left p-space-xs sm:px-space-sm sm:py-2.5 rounded-xl bg-surface-container-low hover:bg-surface-container text-text-primary transition-all flex items-center justify-between group" type="button">
+<span class="font-body-md text-body-md">High-protein Indian vegetarian dinner options</span>
+<span class="material-symbols-outlined text-text-muted group-hover:text-text-primary group-hover:translate-x-1 transition-all text-[18px]">arrow_forward</span>
+</button>
+<button class="w-full text-left p-space-xs sm:px-space-sm sm:py-2.5 rounded-xl bg-surface-container-low hover:bg-surface-container text-text-primary transition-all flex items-center justify-between group" type="button">
+<span class="font-body-md text-body-md">Should I add creatine?</span>
+<span class="material-symbols-outlined text-text-muted group-hover:text-text-primary group-hover:translate-x-1 transition-all text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const input = document.querySelector('input[type="text"]');
+    
+    // Quick question chips populate input
+    document.querySelectorAll('.flex.flex-col.gap-2 button').forEach(button => {
+      button.addEventListener('click', () => {
+        if (input) {
+          const text = button.querySelector('span:first-child')?.textContent || '';
+          input.value = text;
+          input.focus();
+        }
+      });
+    });
+
+    // Add to tomorrow's plan button toggle
+    const planBtn = document.querySelector('button:has(span:contains("Add to tomorrow\'s plan"))');
+    if (planBtn) {
+      planBtn.addEventListener('click', function() {
+        this.classList.remove('bg-contrast-band', 'text-white');
+        this.classList.add('bg-primary-container', 'text-on-primary-fixed');
+        this.innerHTML = '<span>Added to tomorrow</span><span class="material-symbols-outlined text-[16px]">check_circle</span>';
+      });
+    }
+  });
+</script></main></body></html>

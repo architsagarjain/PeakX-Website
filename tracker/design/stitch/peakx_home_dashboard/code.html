@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>PeakX — Home Dashboard</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-error": "#ffffff", "on-tertiary-container": "#446a7c", "tertiary-fixed-dim": "#a5cce1", "text-primary": "#0E0F0C", "on-secondary-fixed": "#3f001a", "on-background": "#1b1c19", "on-tertiary-fixed": "#001e2b", "lime-glow": "rgba(198, 244, 50, 0.16)", "secondary": "#ac2a5b", "surface-container-low": "#f5f4ee", "primary-container": "#c6f432", "coral-gradient-start": "#FF6B9A", "on-error-container": "#93000a", "secondary-fixed-dim": "#ffb1c4", "on-primary-container": "#566d00", "coral-gradient-end": "#FFB3C7", "background": "#fbf9f3", "inverse-on-surface": "#f2f1eb", "electric-lime": "#C6F432", "text-muted": "#9A9B94", "surface-glass-border": "rgba(255, 255, 255, 0.65)", "on-primary-fixed": "#161f00", "canvas-light": "#F5F5F2", "outline": "#747962", "on-secondary-container": "#6e0032", "tertiary-fixed": "#c1e8fe", "primary-fixed": "#c5f331", "error-container": "#ffdad6", "inverse-primary": "#aad600", "on-surface-variant": "#444934", "secondary-fixed": "#ffd9e0", "on-primary-fixed-variant": "#3b4d00", "surface-container": "#efeee8", "error": "#ba1a1a", "inverse-surface": "#30312d", "secondary-container": "#ff6b9a", "surface-bright": "#fbf9f3", "surface-variant": "#e4e2dd", "contrast-band": "#0E0F0C", "primary": "#506600", "surface-dim": "#dbdad4", "surface-container-high": "#eae8e2", "surface-container-highest": "#e4e2dd", "on-secondary-fixed-variant": "#8c0b43", "surface": "#fbf9f3", "surface-glass": "rgba(255, 255, 255, 0.72)", "on-primary": "#ffffff", "surface-tint": "#506600", "text-secondary": "#6A6B66", "surface-container-lowest": "#ffffff", "primary-fixed-dim": "#aad600", "outline-variant": "#c4c9ae", "contrast-surface": "#1A1B17", "on-tertiary": "#ffffff", "tertiary-container": "#c2e9ff", "on-secondary": "#ffffff", "tertiary": "#3e6376", "on-tertiary-fixed-variant": "#244b5d", "on-surface": "#1b1c19" }, "borderRadius": { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" }, "spacing": { "margin": "1.25rem", "space-md": "1rem", "space-2xl": "3rem", "space-lg": "1.5rem", "space-xxs": "0.25rem", "gutter-desktop": "1.5rem", "margin-desktop": "2.5rem", "space-xs": "0.5rem", "space-xl": "2rem", "space-sm": "0.75rem", "gutter": "1.25rem" }, "fontFamily": { "stat-display": ["Manrope"], "label-md": ["Inter"], "stat-display-mobile": ["Manrope"], "body-md": ["Inter"], "stat-unit": ["Inter"], "body-sm": ["Inter"], "body-lg": ["Inter"], "headline-md": ["Manrope"], "headline-xl-mobile": ["Manrope"], "headline-lg": ["Manrope"], "label-caps": ["Inter"], "headline-xl": ["Manrope"], "headline-sm": ["Manrope"] }, "fontSize": { "stat-display": ["56px", { "lineHeight": "60px", "letterSpacing": "-0.04em", "fontWeight": "300" }], "label-md": ["13px", { "lineHeight": "18px", "fontWeight": "500" }], "stat-display-mobile": ["40px", { "lineHeight": "44px", "letterSpacing": "-0.03em", "fontWeight": "300" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "stat-unit": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "500" }], "headline-xl-mobile": ["30px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "400" }], "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "500" }], "label-caps": ["11px", { "lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "600" }], "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.03em", "fontWeight": "400" }], "headline-sm": ["16px", { "lineHeight": "24px", "fontWeight": "600" }] } } } };</script></head><body class="bg-canvas-light text-on-surface font-body-md text-body-md antialiased min-h-screen selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 left-0 right-0 z-50 bg-surface-glass backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 w-full max-w-[1440px] mx-auto px-margin md:px-margin-desktop flex items-center justify-between gap-space-md"><div class="flex items-center shrink-0"><a class="flex items-center gap-space-xs transition-opacity hover:opacity-90" data-path="home" href="#"><span class="font-headline-md text-headline-md text-text-primary tracking-tight font-bold">PeakX</span></a></div><div class="flex items-center gap-space-xs"><nav class="flex items-center p-1.5 bg-surface-container-low/90 backdrop-blur-md rounded-full shadow-[0_2px_12px_rgba(0,0,0,0.03)]"><a class="px-space-md py-space-xs rounded-full font-label-md text-label-md bg-contrast-band text-white font-medium shadow-sm transition-all duration-200" data-path="home" href="#">Home</a><a class="px-space-md py-space-xs rounded-full font-label-md text-label-md text-text-secondary hover:text-text-primary hover:bg-surface-container transition-all duration-200" data-path="plan" href="#">Plan</a><a class="px-space-md py-space-xs rounded-full font-label-md text-label-md text-text-secondary hover:text-text-primary hover:bg-surface-container transition-all duration-200" data-path="log" href="#">Log</a><a class="px-space-md py-space-xs rounded-full font-label-md text-label-md text-text-secondary hover:text-text-primary hover:bg-surface-container transition-all duration-200" data-path="insights" href="#">Insights</a><a class="px-space-md py-space-xs rounded-full font-label-md text-label-md text-text-secondary hover:text-text-primary hover:bg-surface-container transition-all duration-200" data-path="reviews" href="#">Reviews</a><a class="px-space-md py-space-xs rounded-full font-label-md text-label-md text-text-secondary hover:text-text-primary hover:bg-surface-container transition-all duration-200 inline-flex items-center gap-1.5" data-path="coach" href="#"><span>Coach</span><span class="px-1.5 py-0.2 rounded-full bg-electric-lime text-on-primary-fixed text-[10px] font-bold uppercase tracking-wider leading-4">Pro</span></a><div class="relative group"><button class="flex items-center gap-1 px-space-md py-space-xs rounded-full text-text-secondary hover:text-text-primary hover:bg-surface-container font-label-md text-label-md transition-all" type="button"><span>Tools</span><span class="material-symbols-outlined text-[16px] leading-none transition-transform group-hover:rotate-180">expand_more</span></button><div class="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-48 py-space-xs bg-surface-container-lowest/95 backdrop-blur-xl rounded-DEFAULT shadow-[0_12px_32px_rgba(0,0,0,0.08)] opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-150 z-50 flex flex-col"><a class="px-space-md py-2 font-label-md text-label-md text-text-secondary hover:text-text-primary hover:bg-surface-container-low transition-colors" data-path="plateau-check" href="#">Plateau Check</a><a class="px-space-md py-2 font-label-md text-label-md text-text-secondary hover:text-text-primary hover:bg-surface-container-low transition-colors" data-path="recipes" href="#">Recipes</a><a class="px-space-md py-2 font-label-md text-label-md text-text-secondary hover:text-text-primary hover:bg-surface-container-low transition-colors" data-path="form-check" href="#">Form Check</a><a class="px-space-md py-2 font-label-md text-label-md text-text-secondary hover:text-text-primary hover:bg-surface-container-low transition-colors" data-path="blood-work" href="#">Blood Work</a><a class="px-space-md py-2 font-label-md text-label-md text-text-secondary hover:text-text-primary hover:bg-surface-container-low transition-colors" data-path="devices" href="#">Devices</a></div></div></nav></div><div class="flex items-center gap-space-sm shrink-0"><div class="hidden md:flex items-center gap-space-xs px-space-sm py-2 rounded-full bg-surface-container-low text-text-secondary hover:bg-surface-container transition-colors cursor-pointer"><span class="material-symbols-outlined text-[18px]">search</span><span class="font-label-md text-label-md text-text-muted">Quick search</span><kbd class="font-label-caps text-label-caps px-1.5 py-0.5 rounded-full bg-surface-container-high text-text-secondary uppercase tracking-wider">⌘K</kbd></div><a class="flex items-center gap-space-xs px-space-sm py-2 rounded-full bg-primary-container hover:bg-primary-fixed-dim text-on-primary-fixed font-label-md text-label-md font-semibold transition-all shadow-[0_8px_20px_-4px_rgba(198,244,50,0.4)]" data-path="log" href="#"><span class="material-symbols-outlined text-[18px]">mic</span><span class="hidden sm:inline">Log a meal</span></a><button aria-label="Notifications" class="relative w-9 h-9 rounded-full bg-surface-container-low hover:bg-surface-container flex items-center justify-center text-text-secondary hover:text-text-primary transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-coral-gradient-start ring-2 ring-surface-container-low"></span></button><a class="shrink-0 transition-transform hover:scale-105" data-path="profile" href="#"><img alt="Arjun profile" class="w-9 h-9 rounded-full object-cover ring-2 ring-surface-container" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZ4QvudYPidppU9ME_bAmpqQZYPH6uGRnk5VUA04lwZNYJxnEGWuRPf7FEZCDhLrghEY_iK9I-YvjuJO17fqWDla8uU7Lv-cbd2AQJ_a2tKAhP-576I4EK6Ypqo1j3OKKt5UCwfdaYq8dr-_UJuFqKIz9SP_ojZ-LnmbdN1MODUjpi35QR9KSjwu6XM52cFfChEIC6ixD-0PVpkM38NBrNx-O7lXX2-xWMs1J0yeoQHgimhwBcEuWhNw"/></a></div></div></header><main class="w-full pt-20 bg-canvas-light min-h-screen pb-16"><div class="flex flex-col w-full">
+<!-- Top Bar & Week Scrubber Container -->
+<div class="w-full max-w-[1440px] mx-auto px-margin md:px-margin-desktop pt-6 pb-4">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md mb-6">
+<div class="flex flex-col">
+<h1 class="font-headline-lg text-headline-lg text-text-primary font-medium tracking-tight">Good evening, Arjun</h1>
+<span class="font-body-sm text-body-sm text-text-secondary mt-0.5">Here is your progress for Saturday, 17 Oct.</span>
+</div>
+<!-- Horizontal Weekly Date Scrubber Mon 12 - Sun 18, Sat 17 Highlighted -->
+<div class="flex items-center bg-surface-container-low/80 backdrop-blur-md p-1.5 rounded-full shadow-sm self-start lg:self-auto overflow-x-auto max-w-full">
+<button class="flex flex-col items-center justify-center w-11 h-14 rounded-full text-text-secondary hover:text-text-primary hover:bg-surface transition-all shrink-0" type="button">
+<span class="font-label-caps text-[10px] uppercase font-semibold text-text-muted">M</span>
+<span class="font-headline-sm text-sm font-medium mt-0.5">12</span>
+</button>
+<button class="flex flex-col items-center justify-center w-11 h-14 rounded-full text-text-secondary hover:text-text-primary hover:bg-surface transition-all shrink-0" type="button">
+<span class="font-label-caps text-[10px] uppercase font-semibold text-text-muted">T</span>
+<span class="font-headline-sm text-sm font-medium mt-0.5">13</span>
+</button>
+<button class="flex flex-col items-center justify-center w-11 h-14 rounded-full text-text-secondary hover:text-text-primary hover:bg-surface transition-all shrink-0" type="button">
+<span class="font-label-caps text-[10px] uppercase font-semibold text-text-muted">W</span>
+<span class="font-headline-sm text-sm font-medium mt-0.5">14</span>
+</button>
+<button class="flex flex-col items-center justify-center w-11 h-14 rounded-full text-text-secondary hover:text-text-primary hover:bg-surface transition-all shrink-0" type="button">
+<span class="font-label-caps text-[10px] uppercase font-semibold text-text-muted">T</span>
+<span class="font-headline-sm text-sm font-medium mt-0.5">15</span>
+</button>
+<button class="flex flex-col items-center justify-center w-11 h-14 rounded-full text-text-secondary hover:text-text-primary hover:bg-surface transition-all shrink-0" type="button">
+<span class="font-label-caps text-[10px] uppercase font-semibold text-text-muted">F</span>
+<span class="font-headline-sm text-sm font-medium mt-0.5">16</span>
+</button>
+<!-- Active Pill: Sat 17 Today -->
+<button class="flex flex-col items-center justify-center w-12 h-14 rounded-full bg-contrast-band text-white shadow-md relative shrink-0" type="button">
+<span class="font-label-caps text-[10px] uppercase font-semibold text-text-muted">S</span>
+<span class="font-headline-sm text-sm font-semibold mt-0.5">17</span>
+<span class="w-1.5 h-1.5 rounded-full bg-electric-lime absolute bottom-1.5 shadow-[0_0_8px_rgba(198,244,50,0.8)]"></span>
+</button>
+<button class="flex flex-col items-center justify-center w-11 h-14 rounded-full text-text-secondary hover:text-text-primary hover:bg-surface transition-all shrink-0" type="button">
+<span class="font-label-caps text-[10px] uppercase font-semibold text-text-muted">S</span>
+<span class="font-headline-sm text-sm font-medium mt-0.5">18</span>
+</button>
+</div>
+</div>
+<!-- Clean Dismissible Setup Banner -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container-low/90 backdrop-blur-xl p-4 md:px-6 md:py-3.5 mb-8 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4 transition-all duration-300" id="setup-alert">
+<div class="flex items-center gap-3.5">
+<div class="w-8 h-8 rounded-full bg-primary-container/20 flex items-center justify-center text-on-primary-container shrink-0">
+<span class="material-symbols-outlined text-[18px]">checklist</span>
+</div>
+<div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4">
+<span class="font-label-md text-label-md text-text-primary font-medium">Complete your profile setup — 2 steps left</span>
+</div>
+</div>
+<div class="flex items-center gap-4 w-full md:w-auto">
+<!-- Progress bar (80%) -->
+<div class="flex items-center gap-2 flex-1 md:w-36">
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-contrast-band rounded-full" style="width: 80%;"></div>
+</div>
+<span class="font-label-caps text-[11px] font-semibold text-text-secondary">80%</span>
+</div>
+<a class="px-4 py-1.5 rounded-full bg-contrast-band hover:bg-contrast-surface text-white font-label-md text-label-md font-medium shrink-0 shadow-sm transition-colors" href="#">
+          Continue setup
+        </a>
+<button aria-label="Dismiss banner" class="w-7 h-7 rounded-full flex items-center justify-center text-text-muted hover:text-text-primary hover:bg-surface transition-colors shrink-0" onclick="document.getElementById('setup-alert').style.display='none'" type="button">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</div>
+</div>
+<!-- Hero Section: Squat Check + Nutrition & Volume -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-stretch mb-8">
+<!-- Athlete Squat Card (7 Cols) -->
+<div class="lg:col-span-7 relative rounded-xl overflow-hidden bg-contrast-surface shadow-xl min-h-[480px] flex flex-col justify-between p-6 md:p-8">
+<img alt="Arjun performing a heavy barbell back squat" class="absolute inset-0 w-full h-full object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5BVqe9Gg6LgT37AWgRpRdOJrDDQFl3T5pX_xi_qOxdggB99fo4h7WRSNuc-IJnIOK2eG3KCp0Asjrm_1x5S9MvUu-AdP9UsLPtivcNbFWOtnOjcNolTPPznE14oSwYSvzTpn3Q5JBMxAKKIcKmo4OYA6glnyvfU8YOEEriApprA4rZtRXVjOwGe0Z4tXMY2SjjWJKjinWQDS2xYvduJg_ClnkaD8CV8K3Z8zdvev2K1LbW0ZDw3LtJg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-contrast-band/90 via-contrast-band/25 to-black/40"></div>
+<!-- Top Badges inside Squat Check -->
+<div class="relative z-10 flex flex-wrap items-center justify-between gap-3">
+<div class="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/60 backdrop-blur-md">
+<span class="w-2 h-2 rounded-full bg-electric-lime"></span>
+<span class="font-label-caps text-label-caps text-white font-medium uppercase tracking-wider">Today's squat check</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-3 py-1 rounded-full bg-white/20 backdrop-blur-md text-white font-label-caps text-[11px] font-semibold">Depth: Parallel</span>
+<span class="px-3 py-1 rounded-full bg-electric-lime/90 backdrop-blur-md text-on-primary-fixed font-label-caps text-[11px] font-semibold">Bar speed: Good</span>
+</div>
+</div>
+<!-- Connected Callout Markers Over Athlete Body Parts -->
+<div class="relative z-10 my-auto py-8 pointer-events-none">
+<!-- Knee Angle Marker -->
+<div class="absolute left-[38%] top-[48%] flex items-center gap-2">
+<div class="w-2.5 h-2.5 rounded-full bg-electric-lime ring-4 ring-black/50 shadow-[0_0_8px_#C6F432]"></div>
+<div class="w-8 h-px bg-electric-lime/80"></div>
+<div class="px-3 py-1 rounded-full bg-black/75 backdrop-blur-md text-white text-[11px] font-medium border border-white/10 shadow-lg">
+            Knee angle: <span class="font-semibold text-electric-lime">88°</span>
+</div>
+</div>
+<!-- Hip Angle Marker -->
+<div class="absolute left-[47%] top-[34%] flex items-center gap-2">
+<div class="w-2.5 h-2.5 rounded-full bg-electric-lime ring-4 ring-black/50 shadow-[0_0_8px_#C6F432]"></div>
+<div class="w-8 h-px bg-electric-lime/80"></div>
+<div class="px-3 py-1 rounded-full bg-black/75 backdrop-blur-md text-white text-[11px] font-medium border border-white/10 shadow-lg">
+            Hip angle: <span class="font-semibold text-electric-lime">62°</span>
+</div>
+</div>
+<!-- Back Angle Marker -->
+<div class="absolute left-[26%] top-[20%] flex items-center gap-2">
+<div class="px-3 py-1 rounded-full bg-black/75 backdrop-blur-md text-white text-[11px] font-medium border border-white/10 shadow-lg">
+            Back angle: <span class="font-semibold text-electric-lime">42°</span>
+</div>
+<div class="w-8 h-px bg-electric-lime/80"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-electric-lime ring-4 ring-black/50 shadow-[0_0_8px_#C6F432]"></div>
+</div>
+</div>
+<!-- Coach Note Strip on Hero -->
+<div class="relative z-10 p-4 rounded-xl bg-black/60 backdrop-blur-md border border-white/10 flex items-start gap-3">
+<span class="material-symbols-outlined text-electric-lime text-[20px] shrink-0 mt-0.5">check_circle</span>
+<div class="flex flex-col">
+<span class="font-label-caps text-[11px] text-white font-semibold tracking-wide uppercase">Form Analysis</span>
+<p class="font-body-sm text-body-sm text-white/85 leading-relaxed mt-0.5">Knee alignment stayed solid through set 4. Torso stayed stable with clean parallel depth on every rep.</p>
+</div>
+</div>
+</div>
+<!-- Right Side Metrics: Calories Left & Training Volume (5 Cols) -->
+<div class="lg:col-span-5 flex flex-col gap-gutter-desktop">
+<!-- Calories Left Card -->
+<div class="flex-1 rounded-xl bg-surface-container-lowest/90 backdrop-blur-xl p-6 md:p-7 shadow-[0_8px_32px_-4px_rgba(14,15,12,0.04)] flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-text-secondary text-[20px]">local_fire_department</span>
+<span class="font-label-caps text-label-caps text-text-secondary uppercase tracking-widest font-semibold">Calories left</span>
+</div>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container font-label-caps text-label-caps text-text-muted">Target: 2,200 kcal</span>
+</div>
+<!-- Big Thin Numeral -->
+<div class="flex items-baseline gap-2 mb-1">
+<span class="font-stat-display text-stat-display text-text-primary tracking-tighter">820</span>
+<span class="font-stat-unit text-stat-unit text-text-muted font-medium">KCAL LEFT</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary mb-6">1,380 kcal eaten today • On track for maintenance</p>
+</div>
+<!-- Segmented Macro Pills -->
+<div class="grid grid-cols-3 gap-2.5">
+<!-- Protein -->
+<div class="p-3 rounded-lg bg-surface-container-low flex flex-col justify-between">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-caps text-[10px] text-text-secondary uppercase font-semibold">Protein</span>
+<span class="w-1.5 h-1.5 rounded-full bg-contrast-band"></span>
+</div>
+<span class="font-headline-sm text-xs font-semibold text-text-primary">92<span class="text-text-muted text-[10px] font-normal"> / 130g</span></span>
+<div class="w-full h-1 bg-surface-container-high rounded-full mt-2 overflow-hidden">
+<div class="h-full bg-contrast-band rounded-full" style="width: 70.7%;"></div>
+</div>
+</div>
+<!-- Carbs -->
+<div class="p-3 rounded-lg bg-surface-container-low flex flex-col justify-between">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-caps text-[10px] text-text-secondary uppercase font-semibold">Carbs</span>
+<span class="w-1.5 h-1.5 rounded-full bg-electric-lime"></span>
+</div>
+<span class="font-headline-sm text-xs font-semibold text-text-primary">168<span class="text-text-muted text-[10px] font-normal"> / 250g</span></span>
+<div class="w-full h-1 bg-surface-container-high rounded-full mt-2 overflow-hidden">
+<div class="h-full bg-electric-lime rounded-full" style="width: 67.2%;"></div>
+</div>
+</div>
+<!-- Fat -->
+<div class="p-3 rounded-lg bg-surface-container-low flex flex-col justify-between">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-caps text-[10px] text-text-secondary uppercase font-semibold">Fat</span>
+<span class="w-1.5 h-1.5 rounded-full bg-coral-gradient-start"></span>
+</div>
+<span class="font-headline-sm text-xs font-semibold text-text-primary">42<span class="text-text-muted text-[10px] font-normal"> / 65g</span></span>
+<div class="w-full h-1 bg-surface-container-high rounded-full mt-2 overflow-hidden">
+<div class="h-full bg-coral-gradient-start rounded-full" style="width: 64.6%;"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Training Volume Card -->
+<div class="rounded-xl bg-surface-container-lowest/90 backdrop-blur-xl p-6 shadow-[0_8px_32px_-4px_rgba(14,15,12,0.04)] flex flex-col justify-between">
+<div class="flex items-start justify-between mb-3">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-text-secondary text-[18px]">fitness_center</span>
+<span class="font-label-caps text-label-caps text-text-secondary uppercase tracking-widest font-semibold">Training volume</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-lg text-headline-lg font-light text-text-primary tracking-tight">12.4</span>
+<span class="font-stat-unit text-stat-unit text-text-muted">T THIS WEEK</span>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-primary-container/30 text-on-primary-fixed-variant font-label-caps text-label-caps font-semibold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">arrow_upward</span>+8% vs last week
+            </span>
+</div>
+<!-- Clean bar sparkline for M, T, W, T, F, S, S without overlapping text -->
+<div class="pt-4 flex items-end justify-between gap-2 h-16 w-full">
+<div class="flex-1 flex flex-col items-center gap-1.5">
+<div class="w-full bg-surface-container-high rounded-sm h-6"></div>
+<span class="font-label-caps text-[10px] text-text-muted">M</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-1.5">
+<div class="w-full bg-surface-container-high rounded-sm h-10"></div>
+<span class="font-label-caps text-[10px] text-text-muted">T</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-1.5">
+<div class="w-full bg-surface-container-high rounded-sm h-7"></div>
+<span class="font-label-caps text-[10px] text-text-muted">W</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-1.5">
+<div class="w-full bg-surface-container-high rounded-sm h-11"></div>
+<span class="font-label-caps text-[10px] text-text-muted">T</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-1.5">
+<div class="w-full bg-surface-container-high rounded-sm h-8"></div>
+<span class="font-label-caps text-[10px] text-text-muted">F</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-1.5">
+<div class="w-full bg-contrast-band rounded-sm h-14 relative">
+<div class="w-1.5 h-1.5 rounded-full bg-electric-lime absolute -top-2 left-1/2 -translate-x-1/2"></div>
+</div>
+<span class="font-label-caps text-[10px] text-text-primary font-bold">S</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-1.5">
+<div class="w-full bg-surface-container rounded-sm h-3 opacity-30"></div>
+<span class="font-label-caps text-[10px] text-text-muted">S</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Middle 4 Mini Stat Cards (Synced with Fitbit / Google Fit) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter mb-8">
+<!-- Daily Steps Card -->
+<div class="rounded-xl bg-surface-container-lowest/85 backdrop-blur-xl p-5 shadow-[0_8px_24px_rgba(14,15,12,0.03)] flex flex-col justify-between">
+<div class="flex items-center justify-between mb-3">
+<span class="font-label-caps text-label-caps text-text-secondary uppercase tracking-wider font-semibold">Steps</span>
+<span class="font-label-caps text-[10px] text-text-muted">Google Fit</span>
+</div>
+<div class="mb-3">
+<div class="font-headline-lg text-headline-lg font-light text-text-primary">8,240</div>
+<div class="font-body-sm text-body-sm text-text-muted">Goal: 10,000 steps</div>
+</div>
+<div>
+<div class="w-full h-1.5 bg-surface-container-low rounded-full overflow-hidden">
+<div class="h-full bg-contrast-band rounded-full" style="width: 82.4%;"></div>
+</div>
+<div class="flex justify-between items-center mt-1.5">
+<span class="font-label-caps text-[10px] text-text-muted">82% complete</span>
+<span class="font-label-caps text-[10px] text-text-secondary font-medium">1,760 left</span>
+</div>
+</div>
+</div>
+<!-- Sleep Quality Card -->
+<div class="rounded-xl bg-surface-container-lowest/85 backdrop-blur-xl p-5 shadow-[0_8px_24px_rgba(14,15,12,0.03)] flex flex-col justify-between">
+<div class="flex items-center justify-between mb-3">
+<span class="font-label-caps text-label-caps text-text-secondary uppercase tracking-wider font-semibold">Sleep</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-low font-label-caps text-[10px] text-text-secondary font-semibold">Fitbit synced</span>
+</div>
+<div class="flex items-baseline justify-between mb-2">
+<div>
+<div class="font-headline-lg text-headline-lg font-light text-text-primary">7h 10m</div>
+<div class="font-body-sm text-body-sm text-text-muted">Deep sleep: 1h 32m</div>
+</div>
+<svg class="w-16 h-8 text-text-primary shrink-0" fill="none" stroke="currentColor" stroke-width="1.75" viewbox="0 0 64 32">
+<path d="M0 22C12 22 16 10 28 10C40 10 44 24 52 18C56 14 60 12 64 14" stroke-linecap="round"></path>
+</svg>
+</div>
+<div class="pt-2 flex items-center justify-between font-label-caps text-[10px] text-text-secondary">
+<span>Quality: Good</span>
+<span class="text-primary font-medium">Woke up at 6:45 AM</span>
+</div>
+</div>
+<!-- Resting HR Card -->
+<div class="rounded-xl bg-surface-container-lowest/85 backdrop-blur-xl p-5 shadow-[0_8px_24px_rgba(14,15,12,0.03)] flex flex-col justify-between">
+<div class="flex items-center justify-between mb-3">
+<span class="font-label-caps text-label-caps text-text-secondary uppercase tracking-wider font-semibold">Resting HR</span>
+<div class="w-7 h-7 rounded-full bg-surface-container flex items-center justify-center text-secondary-container">
+<span class="material-symbols-outlined text-[16px]">favorite</span>
+</div>
+</div>
+<div class="flex items-baseline justify-between mb-2">
+<div>
+<div class="font-headline-lg text-headline-lg font-light text-text-primary">58 <span class="font-stat-unit text-stat-unit text-text-muted">bpm</span></div>
+<div class="font-body-sm text-body-sm text-text-secondary">Fitbit synced</div>
+</div>
+<svg class="w-16 h-8 text-secondary-container shrink-0" fill="none" stroke="currentColor" stroke-width="1.75" viewbox="0 0 64 32">
+<path d="M0 16H20L24 6L29 26L34 12L38 18L42 16H64" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<div class="pt-2 flex items-center justify-between font-label-caps text-[10px] text-text-secondary">
+<span>Normal resting zone</span>
+<span class="text-text-primary font-semibold">Steady</span>
+</div>
+</div>
+<!-- Active Minutes Card -->
+<div class="rounded-xl bg-surface-container-lowest/85 backdrop-blur-xl p-5 shadow-[0_8px_24px_rgba(14,15,12,0.03)] flex flex-col justify-between">
+<div class="flex items-center justify-between mb-3">
+<span class="font-label-caps text-label-caps text-text-secondary uppercase tracking-wider font-semibold">Active minutes</span>
+<span class="px-2 py-0.5 rounded-full bg-primary-container/30 text-on-primary-fixed-variant font-label-caps text-[10px] font-semibold">Google Fit</span>
+</div>
+<div class="mb-3">
+<div class="font-headline-lg text-headline-lg font-light text-text-primary">42 <span class="font-stat-unit text-stat-unit text-text-muted">min</span></div>
+<div class="font-body-sm text-body-sm text-text-muted">Daily target: 45 min</div>
+</div>
+<div>
+<div class="w-full h-1.5 bg-surface-container-low rounded-full overflow-hidden">
+<div class="h-full bg-electric-lime rounded-full" style="width: 93%;"></div>
+</div>
+<div class="flex justify-between items-center mt-1.5">
+<span class="font-label-caps text-[10px] text-text-secondary">3 min left</span>
+<span class="font-label-caps text-[10px] text-text-primary font-semibold">Almost there</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Secondary Forecast & Weight Cards -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter mb-10">
+<!-- Coral-Pink Gradient Plateau Risk Card (7 Cols) -->
+<div class="lg:col-span-7 rounded-xl p-7 bg-gradient-to-br from-coral-gradient-start/20 via-coral-gradient-end/10 to-surface-container-lowest backdrop-blur-xl shadow-sm relative overflow-hidden flex flex-col justify-between">
+<div class="absolute -right-12 -top-12 w-48 h-48 rounded-full bg-coral-gradient-start/15 blur-3xl pointer-events-none"></div>
+<div>
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary-container"></span>
+<span class="font-label-caps text-label-caps text-secondary font-semibold uppercase tracking-wider">Plateau risk: Watch (34%)</span>
+</div>
+<span class="px-3 py-1 rounded-full bg-surface-container-lowest/80 text-text-primary font-label-caps text-label-caps font-semibold shadow-xs">
+              Check suggested
+            </span>
+</div>
+<h2 class="font-headline-md text-headline-md text-text-primary font-medium mb-2">Weight and lifting have slowed slightly</h2>
+<p class="font-body-md text-body-md text-text-secondary leading-relaxed max-w-xl">
+            Your weight and lifting have slowed slightly over the last 10 days. A small carb bump on squat days can break the stall.
+          </p>
+</div>
+<div class="pt-6 flex flex-wrap items-center justify-between gap-4">
+<div class="flex items-center gap-4 text-text-secondary font-label-md text-label-md">
+<span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-text-muted"></span>Last updated today</span>
+<span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-text-muted"></span>Squat day adjustment ready</span>
+</div>
+<button class="px-5 py-2 rounded-full bg-contrast-band hover:bg-contrast-surface text-white font-label-md text-label-md font-medium transition-all shadow-sm flex items-center gap-2" type="button">
+<span>Run plateau check</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Weight Trend Card (5 Cols) -->
+<div class="lg:col-span-5 rounded-xl bg-surface-container-lowest/90 backdrop-blur-xl p-7 shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-text-secondary text-[18px]">scale</span>
+<span class="font-label-caps text-label-caps text-text-secondary uppercase tracking-wider font-semibold">Weight</span>
+</div>
+<span class="font-label-caps text-label-caps text-primary font-semibold bg-primary-container/20 px-2 py-0.5 rounded-full">−0.4 kg this week</span>
+</div>
+<div class="flex items-baseline gap-2 mb-1">
+<span class="font-headline-lg text-headline-lg font-light text-text-primary">74.2 kg</span>
+<span class="text-text-muted font-body-sm mx-1.5">•</span>
+<span class="font-body-md text-body-md text-text-secondary font-medium">Target: 72.0 kg</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-muted">Steady progress toward your target weight</p>
+</div>
+<!-- Clean Downward Trajectory Chart with no overlapping labels -->
+<div class="pt-6">
+<div class="h-20 w-full relative">
+<svg class="w-full h-full overflow-visible" preserveaspectratio="none" viewbox="0 0 300 70">
+<defs>
+<lineargradient id="weightGradClean" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#C6F432" stop-opacity="0.28"></stop>
+<stop offset="100%" stop-color="#C6F432" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+<!-- Target guideline -->
+<line stroke="#c4c9ae" stroke-dasharray="3 3" stroke-width="1" x1="0" x2="300" y1="52" y2="52"></line>
+<!-- Area & Line -->
+<path d="M 0 10 Q 75 18 150 28 T 300 42 L 300 70 L 0 70 Z" fill="url(#weightGradClean)"></path>
+<path d="M 0 10 Q 75 18 150 28 T 300 42" fill="none" stroke="#0E0F0C" stroke-linecap="round" stroke-width="2.5"></path>
+<circle cx="300" cy="42" fill="#0E0F0C" r="4"></circle>
+<circle cx="300" cy="42" fill="#C6F432" r="2"></circle>
+</svg>
+</div>
+<div class="flex justify-between items-center text-text-muted font-label-caps text-[10px] mt-3 pt-1 border-t border-surface-container">
+<span>1 Oct (75.8 kg)</span>
+<span>Today (74.2 kg)</span>
+<span class="font-semibold text-text-secondary">Target: 72.0 kg</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Grounding Obsidian Contrast Band (#0E0F0C) -->
+<div class="w-full rounded-xl bg-contrast-band text-white p-6 md:p-8 lg:p-10 shadow-2xl relative overflow-hidden mb-6">
+<div class="absolute bottom-0 right-1/4 w-96 h-96 rounded-full bg-electric-lime/10 blur-[100px] pointer-events-none"></div>
+<!-- Contrast Band Header -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-8">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="w-2 h-2 rounded-full bg-electric-lime"></span>
+<span class="font-label-caps text-label-caps text-electric-lime uppercase tracking-widest font-semibold">Today's plan</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-white font-light">Saturday, 17 October · Squat day</h2>
+</div>
+<div class="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md text-white/80 font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px] text-electric-lime">calendar_today</span>
+<span>Weekend schedule</span>
+</div>
+</div>
+<!-- 3 Cards inside Dark Band -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-5 items-stretch">
+<!-- 1. Workout Card -->
+<div class="rounded-lg bg-contrast-surface p-6 flex flex-col justify-between group hover:bg-contrast-surface/80 transition-all">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="px-2.5 py-1 rounded-full bg-white/10 font-label-caps text-label-caps text-white/90">WORKOUT</span>
+<span class="font-label-caps text-[11px] text-electric-lime font-medium">50 min</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-white font-medium mb-1">Lower body squat focus</h3>
+<p class="font-body-sm text-body-sm text-white/60 mb-5 leading-relaxed">
+              Back squat 4×6 @ 80kg, Romanian deadlifts, walking lunges, leg press.
+            </p>
+<div class="flex items-center gap-3 py-2 mb-6 text-white/70 font-label-md text-label-md">
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px] text-white/40">fitness_center</span>4 exercises</span>
+<span class="text-white/30">•</span>
+<span class="text-electric-lime font-medium">Heavy sets</span>
+</div>
+</div>
+<button class="w-full py-3 px-4 rounded-full bg-electric-lime hover:bg-primary-fixed text-on-primary-fixed font-label-md text-label-md font-semibold transition-all shadow-[0_8px_20px_-4px_rgba(198,244,50,0.4)] flex items-center justify-center gap-2" type="button">
+<span>Start workout</span>
+<span class="material-symbols-outlined text-[18px]">play_arrow</span>
+</button>
+</div>
+<!-- 2. Dinner Card -->
+<div class="rounded-lg bg-contrast-surface p-6 flex flex-col justify-between group hover:bg-contrast-surface/80 transition-all">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="px-2.5 py-1 rounded-full bg-white/10 font-label-caps text-label-caps text-white/90">PLANNED 8:30 PM</span>
+<span class="font-label-caps text-[11px] text-coral-gradient-start font-medium">Dinner</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-white font-medium mb-1">Paneer bhurji + 2 rotis</h3>
+<p class="font-body-sm text-body-sm text-white/60 mb-5 leading-relaxed">
+              Fresh spiced paneer with onion, tomato, greens, and whole wheat rotis.
+            </p>
+<div class="flex items-center gap-3 py-2 mb-6 text-white/70 font-label-md text-label-md">
+<span class="font-semibold text-white">560 <span class="text-white/50 text-[10px]">kcal</span></span>
+<span class="text-white/30">•</span>
+<span class="text-electric-lime font-medium">38g protein</span>
+</div>
+</div>
+<button class="w-full py-3 px-4 rounded-full bg-white/10 hover:bg-white/20 text-white font-label-md text-label-md font-medium transition-all flex items-center justify-center gap-2" type="button">
+<span class="material-symbols-outlined text-[18px] text-electric-lime">restaurant</span>
+<span>Log dinner</span>
+</button>
+</div>
+<!-- 3. Daily Habits Card -->
+<div class="rounded-lg bg-contrast-surface p-6 flex flex-col justify-between group hover:bg-contrast-surface/80 transition-all">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="px-2.5 py-1 rounded-full bg-white/10 font-label-caps text-label-caps text-white/90">HABITS</span>
+<span class="font-label-caps text-[11px] text-white/50">Google Fit connected</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-white font-medium mb-2">Daily habits</h3>
+<div class="space-y-4 my-3">
+<div>
+<div class="flex justify-between items-center text-sm font-medium mb-1">
+<span class="text-white/80">Steps</span>
+<span class="text-white font-semibold">8,240 / 10,000</span>
+</div>
+<div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+<div class="h-full bg-electric-lime rounded-full" style="width: 82.4%;"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between items-center text-sm font-medium mb-1">
+<span class="text-white/80">Water intake</span>
+<span class="text-white font-semibold">2.5L / 3.0L</span>
+</div>
+<div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+<div class="h-full bg-tertiary-container rounded-full" style="width: 83.3%;"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-4 flex items-center justify-between text-white/60 font-label-caps text-[11px] border-t border-white/10">
+<span>Daily adherence: 88%</span>
+<span class="text-electric-lime font-medium">On track</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></main></body></html>
