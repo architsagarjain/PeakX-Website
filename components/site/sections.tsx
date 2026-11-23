@@ -165,6 +165,7 @@ export function Footer() {
           <li><Link href="/apply" className="hover:text-white">Apply for coaching</Link></li>
           <li><Link href="/#journey" className="hover:text-white">The 12 weeks</Link></li>
           <li><Link href="/#faq" className="hover:text-white">FAQ</Link></li>
+          <li><a href="/app" className="hover:text-white">PeakX App</a></li>
         </ul>
         <ul className="grid content-start gap-3">
           <li><a href={site.instagram} target="_blank" rel="noopener" className="hover:text-white">@fitwithbhavika</a></li>

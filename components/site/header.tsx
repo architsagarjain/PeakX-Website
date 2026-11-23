@@ -12,6 +12,7 @@ const links = [
   { href: "/#stories", label: "Stories" },
   { href: "/#bhavika", label: "Bhavika" },
   { href: "/#faq", label: "FAQ" },
+  { href: "/app", label: "PeakX App" },
 ];
 
 export default function Header({ minimal = false, ctaHref = "/#apply" }: { minimal?: boolean; ctaHref?: string }) {
@@ -36,11 +37,18 @@ export default function Header({ minimal = false, ctaHref = "/#apply" }: { minim
         </Link>
         {!minimal && (
           <nav aria-label="Main" className="hidden items-center gap-8 lg:flex">
-            {links.map((l) => (
-              <Link key={l.href} href={l.href} className="text-[0.9375rem] text-white/75 transition-colors hover:text-white">
-                {l.label}
-              </Link>
-            ))}
+            {links.map((l) =>
+              // /app is the separate PeakX app (public/app), so it needs a full page load, not client navigation
+              l.href === "/app" ? (
+                <a key={l.href} href={l.href} className="text-[0.9375rem] text-white/75 transition-colors hover:text-white">
+                  {l.label}
+                </a>
+              ) : (
+                <Link key={l.href} href={l.href} className="text-[0.9375rem] text-white/75 transition-colors hover:text-white">
+                  {l.label}
+                </Link>
+              )
+            )}
           </nav>
         )}
         <Link href={ctaHref} onClick={() => track("ViewContent", { content_name: "header_cta" })} className="btn btn-green !hidden !min-h-[44px] !px-5 text-[0.9375rem] md:!inline-flex">
